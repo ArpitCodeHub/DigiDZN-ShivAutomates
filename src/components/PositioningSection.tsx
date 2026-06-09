@@ -57,12 +57,12 @@ export default function PositioningSection() {
           </h1>
         </motion.div>
 
-        {/* Pills row */}
+        {/* Pills row (hidden on mobile — available via hamburger menu) */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 md:mb-10"
+          className="hidden md:flex flex-wrap items-center gap-2 sm:gap-3 mb-8 md:mb-10"
         >
           {services.map((s, i) => (
             <span
@@ -88,8 +88,8 @@ export default function PositioningSection() {
           </motion.a>
         </motion.div>
 
-        {/* Divider */}
-        <div className="border-t border-white/10 mb-8 md:mb-10" />
+        {/* Divider (matches pills visibility) */}
+        <div className="hidden md:block border-t border-white/10 mb-8 md:mb-10" />
 
         {/* Tagline + CTA */}
         <motion.div
