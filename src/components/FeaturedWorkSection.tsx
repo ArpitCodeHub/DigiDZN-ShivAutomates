@@ -25,7 +25,7 @@ const PROJECTS: Project[] = [
     approach: 'Comprehensive SEO strategy combined with targeted local GEO marketing and content optimization',
     result: '+250% organic traffic in 6 months',
     metric: '250%', metricLabel: 'Traffic increase',
-    color: '#a855f7',
+    color: '#a87242',
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const PROJECTS: Project[] = [
     approach: 'Integrated content marketing, targeted paid campaigns, and conversion funnel optimization',
     result: '+180% qualified leads, 3.2x ROI',
     metric: '3.2×', metricLabel: 'Marketing ROI',
-    color: '#6366f1',
+    color: '#c89368',
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const PROJECTS: Project[] = [
     approach: 'Multi-location SEO strategy with hyper-local GEO targeting and reputation management',
     result: '+340% service inquiries from local search',
     metric: '340%', metricLabel: 'Local inquiries',
-    color: '#14b8a6',
+    color: '#d4a576',
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     approach: 'Creative storytelling campaign and integrated marketing communications',
     result: '+45% brand awareness increase',
     metric: '45%', metricLabel: 'Brand awareness',
-    color: '#f59e0b',
+    color: '#8b5e3c',
   },
 ]
 
@@ -86,7 +86,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
         </span>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-colors">
           {project.title}
         </h3>
 
@@ -100,7 +100,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
             {project.metric}
           </span>
           <span className="text-sm text-white/40 mb-1">{project.metricLabel}</span>
-          <span className="ml-auto text-white/30 group-hover:text-purple-400 transition-colors text-sm">
+          <span className="ml-auto text-white/30 group-hover:text-[#c89368] transition-colors text-sm">
             View case study →
           </span>
         </div>
@@ -119,7 +119,7 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
       onClick={onClose}
     >
       <motion.div
-        className="bg-[#111] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto"
+        className="bg-[#110d0a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto"
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -167,7 +167,7 @@ export default function FeaturedWorkSection() {
   const [selected, setSelected] = useState<Project | null>(null)
 
   return (
-    <Section id="featured-work" className="py-24 md:py-32 bg-[#0a0a0a]">
+    <Section id="featured-work" className="py-24 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -177,9 +177,9 @@ export default function FeaturedWorkSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-4">Featured Work</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Featured Work</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Results that speak<br />for themselves
+            Results that <span className="font-serif-italic font-normal text-[#d4a576]">speak</span><br />for themselves
           </h2>
           <p className="text-lg text-white/50 max-w-2xl">
             Case studies showcasing measurable outcomes from our strategic partnerships.

@@ -12,13 +12,13 @@ interface EcoNode {
 }
 
 const nodes: EcoNode[] = [
-  { id: 1, label: 'SEO',                  icon: '🔍', color: '#a855f7', connections: [2,3,5,7], description: 'Organic visibility through precision keyword strategy, technical optimization, and content authority.' },
-  { id: 2, label: 'GEO',                  icon: '📍', color: '#6366f1', connections: [1,4,7],   description: 'Hyper-local targeting that puts your brand in front of the right audience at the right location.' },
-  { id: 3, label: 'Content',              icon: '✍️', color: '#ec4899', connections: [1,4,6],   description: 'Strategic content that attracts, educates, and converts your ideal customers at every funnel stage.' },
-  { id: 4, label: 'Branding',             icon: '✨', color: '#f59e0b', connections: [2,3,5,6], description: 'Distinctive brand identity and positioning that commands attention and builds lasting recognition.' },
-  { id: 5, label: 'Websites',             icon: '🌐', color: '#10b981', connections: [1,4,7],   description: 'High-converting web experiences engineered for performance, UX, and lead generation.' },
-  { id: 6, label: 'Social',               icon: '💬', color: '#06b6d4', connections: [3,4],     description: 'Community-building and engagement strategies that amplify reach and deepen brand loyalty.' },
-  { id: 7, label: 'Performance\nMkt',     icon: '📈', color: '#ef4444', connections: [1,2,5],   description: 'Data-driven paid advertising that maximises ROI and scales your growth predictably.' },
+  { id: 1, label: 'SEO',                  icon: '🔍', color: '#a87242', connections: [2,3,5,7], description: 'Organic visibility through precision keyword strategy, technical optimization, and content authority.' },
+  { id: 2, label: 'GEO',                  icon: '📍', color: '#c89368', connections: [1,4,7],   description: 'Hyper-local targeting that puts your brand in front of the right audience at the right location.' },
+  { id: 3, label: 'Content',              icon: '✍️', color: '#d4a576', connections: [1,4,6],   description: 'Strategic content that attracts, educates, and converts your ideal customers at every funnel stage.' },
+  { id: 4, label: 'Branding',             icon: '✨', color: '#8b5e3c', connections: [2,3,5,6], description: 'Distinctive brand identity and positioning that commands attention and builds lasting recognition.' },
+  { id: 5, label: 'Websites',             icon: '🌐', color: '#a87242', connections: [1,4,7],   description: 'High-converting web experiences engineered for performance, UX, and lead generation.' },
+  { id: 6, label: 'Social',               icon: '💬', color: '#c89368', connections: [3,4],     description: 'Community-building and engagement strategies that amplify reach and deepen brand loyalty.' },
+  { id: 7, label: 'Performance\nMkt',     icon: '📈', color: '#d4a576', connections: [1,2,5],   description: 'Data-driven paid advertising that maximises ROI and scales your growth predictably.' },
 ]
 
 export default function GrowthEcosystemSection() {
@@ -32,7 +32,7 @@ export default function GrowthEcosystemSection() {
   }
 
   return (
-    <Section id="growth-ecosystem" className="py-24 md:py-32 bg-[#0a0a0a]">
+    <Section id="growth-ecosystem" className="py-24 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -42,9 +42,9 @@ export default function GrowthEcosystemSection() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-4">Our Ecosystem</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Our Ecosystem</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Seven forces,<br />one unified system
+            Seven forces, <span className="font-serif-italic font-normal text-[#d4a576]">one</span><br />unified system
           </h2>
           <p className="text-lg text-white/50 max-w-2xl mx-auto">
             Every capability is interconnected. Hover a node to see how it amplifies the rest.

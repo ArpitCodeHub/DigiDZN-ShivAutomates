@@ -2,16 +2,16 @@ import { motion } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const items = [
-  { id: 1, type: 'Case Study',    title: 'E-commerce Revenue Campaign',     desc: 'Multi-channel strategy driving 250% traffic growth',  color: '#a855f7', span: 'md:col-span-2' },
-  { id: 2, type: 'Brand Video',   title: 'Brand Identity Reel',             desc: 'Visual storytelling that captures brand essence',     color: '#6366f1', span: '' },
-  { id: 3, type: 'SEO Report',    title: 'Technical SEO Overhaul',          desc: '12-month ranking trajectory from page 4 to #1',      color: '#14b8a6', span: '' },
-  { id: 4, type: 'Ad Creative',   title: 'Paid Social Campaign Deck',       desc: 'High-CTR creatives that outperformed benchmarks 3×',  color: '#f59e0b', span: '' },
-  { id: 5, type: 'Content Hub',   title: 'B2B Content Strategy',            desc: 'Thought leadership series generating 40% of leads',   color: '#ec4899', span: 'md:col-span-2' },
+  { id: 1, type: 'Case Study',    title: 'E-commerce Revenue Campaign',     desc: 'Multi-channel strategy driving 250% traffic growth',  color: '#a87242', span: 'md:col-span-2' },
+  { id: 2, type: 'Brand Video',   title: 'Brand Identity Reel',             desc: 'Visual storytelling that captures brand essence',     color: '#c89368', span: '' },
+  { id: 3, type: 'SEO Report',    title: 'Technical SEO Overhaul',          desc: '12-month ranking trajectory from page 4 to #1',      color: '#d4a576', span: '' },
+  { id: 4, type: 'Ad Creative',   title: 'Paid Social Campaign Deck',       desc: 'High-CTR creatives that outperformed benchmarks 3×',  color: '#8b5e3c', span: '' },
+  { id: 5, type: 'Content Hub',   title: 'B2B Content Strategy',            desc: 'Thought leadership series generating 40% of leads',   color: '#a87242', span: 'md:col-span-2' },
 ]
 
 export default function ContentCreativeSection() {
   return (
-    <Section id="content-creative" className="py-24 md:py-32 bg-[#0d0d0d]">
+    <Section id="content-creative" className="py-24 md:py-32 bg-[#0d0a08]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -21,9 +21,9 @@ export default function ContentCreativeSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-4">Creative Work</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Creative Work</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Content that<br />converts
+            Content that<br /><span className="font-serif-italic font-normal text-[#d4a576]">converts</span>
           </h2>
           <p className="text-lg text-white/50 max-w-2xl">
             Every piece of content we create is engineered with a goal: attract the right audience, build trust, and drive action.
@@ -70,7 +70,7 @@ export default function ContentCreativeSection() {
                 >
                   {item.type}
                 </span>
-                <h3 className="font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                <h3 className="font-bold text-white mb-2 group-hover:text-[#d4a576] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-white/45">{item.desc}</p>

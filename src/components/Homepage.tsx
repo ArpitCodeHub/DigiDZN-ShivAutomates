@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PositioningSection from './PositioningSection'
+import AboutSection from './AboutSection'
 import FeaturedWorkSection from './FeaturedWorkSection'
 import GrowthEcosystemSection from './GrowthEcosystemSection'
 import AISectionAndGEO from './AISectionAndGEO'
@@ -13,37 +14,40 @@ interface LeadData { name: string; email: string; company: string; message: stri
 interface HomepageProps { leadFormOpen: boolean; setLeadFormOpen: (v: boolean) => void }
 
 const navLinks = [
-  { label: 'Work',       href: '#featured-work' },
-  { label: 'Services',   href: '#growth-ecosystem' },
-  { label: 'AI & GEO',  href: '#ai-geo' },
-  { label: 'Team',       href: '#team' },
+  { label: 'Agency',       href: '#about' },
+  { label: 'Our Works',    href: '#featured-work' },
+  { label: 'Services',     href: '#growth-ecosystem' },
+  { label: 'Testimonials', href: '#testimonials' },
 ]
 
 function Navbar({ onContactClick }: { onContactClick: () => void }) {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 border-b border-white/6 bg-[#0a0a0a]/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0a0807]/70 backdrop-blur-md">
       <Container maxWidth="xl">
-        <div className="flex items-center justify-between h-16">
-          <span className="text-lg font-bold text-white tracking-tight">
-            Digi<span style={{ color: '#a855f7' }}>DZN</span>
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <span className="text-base md:text-lg font-black text-white tracking-[0.2em]">
+            DIGIDZN
           </span>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map(l => (
               <a key={l.label} href={l.href}
-                className="text-sm text-white/50 hover:text-white transition-colors">
+                className="text-sm text-white/70 hover:text-white transition-colors">
                 {l.label}
               </a>
             ))}
           </div>
-          <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
+          <button
             onClick={onContactClick}
-            className="px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
-            style={{ background: 'linear-gradient(135deg, #a855f7, #6366f1)' }}
+            aria-label="Contact"
+            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors"
           >
-            Let's Talk
-          </motion.button>
+            <span className="grid grid-cols-2 gap-0.5">
+              <span className="w-1 h-1 rounded-full bg-current" />
+              <span className="w-1 h-1 rounded-full bg-current" />
+              <span className="w-1 h-1 rounded-full bg-current" />
+              <span className="w-1 h-1 rounded-full bg-current" />
+            </span>
+          </button>
         </div>
       </Container>
     </nav>
@@ -68,7 +72,7 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
     if (Object.keys(e).length) { setErrors(e); return }
     setStatus('loading')
     try {
-      await new Promise(r => setTimeout(r, 1200)) // Placeholder – wire to Supabase
+      await new Promise(r => setTimeout(r, 1200))
       setStatus('success')
       setTimeout(onClose, 2000)
     } catch {
@@ -79,14 +83,14 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
   const field = (key: keyof LeadData, label: string, type = 'text', required = false) => (
     <div>
       <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
-        {label}{required && <span className="text-purple-400 ml-1">*</span>}
+        {label}{required && <span className="text-[#c89368] ml-1">*</span>}
       </label>
       <input
         type={type}
         value={data[key]}
         onChange={e => { setData(p => ({ ...p, [key]: e.target.value })); setErrors(p => ({ ...p, [key]: '' })) }}
         className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm outline-none transition-colors
-          focus:border-purple-500/60 focus:bg-white/8
+          focus:border-[#a87242]/60 focus:bg-white/8
           ${errors[key] ? 'border-red-500/60' : 'border-white/10'}`}
         placeholder={`Your ${label.toLowerCase()}`}
       />
@@ -96,18 +100,18 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50 p-4"
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       onClick={onClose}
     >
       <motion.div
-        className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-lg"
+        className="bg-[#110d0a] border border-white/10 rounded-2xl w-full max-w-lg"
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         onClick={e => e.stopPropagation()}
       >
-        <div className="h-1 rounded-t-2xl" style={{ background: 'linear-gradient(90deg,#a855f7,#6366f1)' }} />
+        <div className="h-1 rounded-t-2xl" style={{ background: 'linear-gradient(90deg,#a87242,#c89368)' }} />
         <div className="p-8">
           <div className="flex items-start justify-between mb-8">
             <div>
@@ -135,7 +139,7 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
                   value={data.message}
                   onChange={e => setData(p => ({ ...p, message: e.target.value }))}
                   rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm outline-none transition-colors focus:border-purple-500/60 focus:bg-white/8 resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm outline-none transition-colors focus:border-[#a87242]/60 focus:bg-white/8 resize-none"
                   placeholder="Tell us about your goals…"
                 />
               </div>
@@ -147,7 +151,7 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="flex-1 py-3.5 rounded-xl text-sm font-semibold text-white disabled:opacity-50"
-                  style={{ background: 'linear-gradient(135deg, #a855f7, #6366f1)' }}
+                  style={{ background: 'linear-gradient(135deg, #a87242, #c89368)' }}
                 >
                   {status === 'loading' ? 'Sending…' : 'Send Message'}
                 </motion.button>
@@ -170,11 +174,9 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
 
 function FinalCTA({ onOpen }: { onOpen: () => void }) {
   return (
-    <section id="final-cta" className="py-32 md:py-40 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-600/15 blur-[120px]" />
-      <div className="pointer-events-none absolute inset-0"
-        style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
+    <section id="final-cta" className="py-32 md:py-40 bg-[#0a0807] relative overflow-hidden">
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
+        style={{ background: 'radial-gradient(closest-side, rgba(168,114,66,0.35), transparent 70%)', filter: 'blur(40px)' }} />
 
       <Container maxWidth="lg" className="relative z-10 text-center">
         <motion.div
@@ -183,25 +185,22 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-6">Ready to grow?</p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-6">Ready to grow?</p>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-8">
             Let's engineer<br />
-            <span style={{ background: 'linear-gradient(135deg,#a855f7,#6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              your growth
-            </span>
+            <span className="font-serif-italic font-normal" style={{ color: '#d4a576' }}>your growth</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/50 max-w-xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/55 max-w-xl mx-auto mb-12 leading-relaxed">
             Ready to transform your business into an attention-capturing powerhouse?
-            Let's start the conversation today.
+            Let's start the conversation.
           </p>
           <motion.button
             onClick={onOpen}
-            whileHover={{ scale: 1.06 }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="px-10 py-5 rounded-2xl text-lg font-bold text-white"
-            style={{ background: 'linear-gradient(135deg, #a855f7, #6366f1)', boxShadow: '0 0 60px rgba(168,85,247,0.3)' }}
+            className="px-9 py-4 rounded-full text-base md:text-lg font-semibold text-white border border-white/30 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/60 transition-colors"
           >
-            Start Your Journey →
+            Book a call →
           </motion.button>
         </motion.div>
       </Container>
@@ -211,16 +210,14 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/6 bg-[#0a0a0a] py-12">
+    <footer className="border-t border-white/8 bg-[#0a0807] py-12">
       <Container maxWidth="xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="text-lg font-bold text-white">
-            Digi<span style={{ color: '#a855f7' }}>DZN</span>
-          </span>
-          <p className="text-sm text-white/25">© 2026 DigiDZN. Engineering attention into growth.</p>
+          <span className="text-base font-black text-white tracking-[0.2em]">DIGIDZN</span>
+          <p className="text-sm text-white/30">© 2026 DigiDZN. Engineering attention into growth.</p>
           <div className="flex gap-6">
             {['Privacy', 'Terms', 'Contact'].map(l => (
-              <a key={l} href="#" className="text-sm text-white/30 hover:text-white/70 transition-colors">{l}</a>
+              <a key={l} href="#" className="text-sm text-white/35 hover:text-white/80 transition-colors">{l}</a>
             ))}
           </div>
         </div>
@@ -233,17 +230,16 @@ export default function Homepage({ leadFormOpen, setLeadFormOpen }: HomepageProp
   return (
     <div className="homepage">
       <Navbar onContactClick={() => setLeadFormOpen(true)} />
-      <div className="pt-16">
-        <PositioningSection />
-        <FeaturedWorkSection />
-        <GrowthEcosystemSection />
-        <AISectionAndGEO />
-        <ContentCreativeSection />
-        <TestimonialsSection />
-        <TeamSection />
-        <FinalCTA onOpen={() => setLeadFormOpen(true)} />
-        <Footer />
-      </div>
+      <PositioningSection />
+      <AboutSection />
+      <FeaturedWorkSection />
+      <GrowthEcosystemSection />
+      <AISectionAndGEO />
+      <ContentCreativeSection />
+      <TestimonialsSection />
+      <TeamSection />
+      <FinalCTA onOpen={() => setLeadFormOpen(true)} />
+      <Footer />
 
       <AnimatePresence>
         {leadFormOpen && <LeadFormModal onClose={() => setLeadFormOpen(false)} />}

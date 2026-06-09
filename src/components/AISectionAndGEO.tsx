@@ -7,27 +7,27 @@ const cards = [
     title: 'AI-Powered Insights',
     desc: 'ML algorithms analyze behavior patterns to predict what captures attention and drives conversions before you spend a dollar.',
     outcomes: ['Predictive Targeting', 'Smart Personalization', 'Continuous Optimization'],
-    color: '#a855f7',
+    color: '#a87242',
   },
   {
     icon: '📍',
     title: 'Geo-Location Marketing',
     desc: 'Reach customers at the exact moment and location where purchasing decisions happen. Right place, right message, every time.',
     outcomes: ['Hyper-Local Targeting', 'Higher Conversions', 'Measurable ROI'],
-    color: '#6366f1',
+    color: '#c89368',
   },
   {
     icon: '🔄',
     title: 'Real-Time Adaptation',
     desc: 'Our systems continuously learn and adapt campaigns in real-time, keeping your strategy ahead of market shifts automatically.',
     outcomes: ['Dynamic Optimization', 'Market Responsiveness', 'Competitive Advantage'],
-    color: '#14b8a6',
+    color: '#d4a576',
   },
 ]
 
 export default function AISectionAndGEO() {
   return (
-    <Section id="ai-geo" className="py-24 md:py-32 bg-[#0d0d0d]">
+    <Section id="ai-geo" className="py-24 md:py-32 bg-[#0d0a08]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -37,10 +37,10 @@ export default function AISectionAndGEO() {
           viewport={{ once: true }}
           className="mb-16 max-w-3xl"
         >
-          <p className="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">AI & GEO</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">AI & GEO</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             The future of<br />
-            <span style={{ background: 'linear-gradient(135deg,#a855f7,#6366f1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span className="font-serif-italic font-normal" style={{ color: '#d4a576' }}>
               engineered attention
             </span>
           </h2>
@@ -71,7 +71,7 @@ export default function AISectionAndGEO() {
                 {card.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-colors">
                 {card.title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed mb-6">{card.desc}</p>
@@ -94,10 +94,10 @@ export default function AISectionAndGEO() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="rounded-2xl p-8 md:p-12 border border-purple-500/20 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.08), rgba(99,102,241,0.08))' }}
+          className="rounded-2xl p-8 md:p-12 border border-[#a87242]/20 relative overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, rgba(168,114,66,0.10), rgba(200,147,104,0.08))' }}
         >
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#a87242]/8 to-[#c89368]/5" />
           <div className="relative z-10 md:flex items-center justify-between gap-8">
             <div className="mb-6 md:mb-0">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">Why this matters</h3>
@@ -110,8 +110,7 @@ export default function AISectionAndGEO() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="flex-shrink-0 px-8 py-4 rounded-xl text-sm font-semibold text-white"
-              style={{ background: 'linear-gradient(135deg, #a855f7, #6366f1)' }}
+              className="flex-shrink-0 px-7 py-3 rounded-full text-sm font-semibold text-white border border-white/25 bg-white/5 hover:bg-[#a87242]/25 hover:border-[#a87242]/50 transition-colors"
               onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get Started

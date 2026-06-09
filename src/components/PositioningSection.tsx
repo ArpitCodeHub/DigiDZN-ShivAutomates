@@ -1,120 +1,131 @@
 import { motion } from 'framer-motion'
 import { Container } from '../sections/Section'
 
-const stats = [
-  { value: '150%+', label: 'Avg. lead increase' },
-  { value: '500+',  label: 'Brands transformed' },
-  { value: '10M+',  label: 'People reached' },
+const services = ['Design', 'Development', 'Maintenance']
+
+const previewCards = [
+  { title: 'UniLearn',  tag: 'EdTech',     gradient: 'linear-gradient(135deg,#3a2a1f 0%,#a87242 100%)' },
+  { title: 'Homeway',   tag: 'Real Estate',gradient: 'linear-gradient(135deg,#5a3a22 0%,#c89368 100%)' },
 ]
 
 export default function PositioningSection() {
   return (
     <section
       id="positioning"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0a0807]"
     >
-      {/* Background grid */}
+      {/* Brown radial glow */}
       <div
-        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-[1100px] h-[700px] rounded-full"
         style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px)',
-          backgroundSize: '60px 60px',
+          background: 'radial-gradient(closest-side, rgba(168,114,66,0.55), rgba(168,114,66,0.18) 45%, transparent 75%)',
+          filter: 'blur(20px)',
         }}
       />
 
-      {/* Radial glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-purple-600/10 blur-[120px]" />
-      <div className="pointer-events-none absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-indigo-600/10 blur-[80px]" />
-
-      <Container maxWidth="xl" className="relative z-10 py-32 md:py-40">
-        <div className="max-w-5xl">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/60 mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-            Digital Growth Agency
-          </motion.div>
-
-          {/* Main headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] font-bold leading-[1.05] tracking-tight mb-6"
-          >
-            Engineering{' '}
+      <Container maxWidth="xl" className="relative z-10 pt-32 pb-12 md:pt-40 md:pb-16">
+        {/* Massive wordmark */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center md:text-left leading-none mb-10"
+        >
+          <h1 className="leading-[0.85] tracking-tight">
             <span
+              className="block font-black text-white"
               style={{
-                background: 'linear-gradient(135deg, #a855f7, #6366f1)',
+                fontSize: 'clamp(64px, 14vw, 220px)',
+                letterSpacing: '-0.04em',
+                background: 'linear-gradient(180deg,#ffffff 0%,#e8d9c9 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}
             >
-              Attention
+              DIGI<span className="font-serif-italic font-normal" style={{ WebkitTextFillColor: '#f1e3d2' }}>DZN</span>
             </span>
-            <br />
-            Into Growth
-          </motion.h1>
+          </h1>
+        </motion.div>
 
-          {/* Subheading */}
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed mb-10"
-          >
-            More leads, greater visibility, increased sales. We combine strategy,
-            creativity, and technology to convert attention into measurable growth
-            that directly impacts your bottom line.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mb-20"
-          >
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-4 rounded-xl text-base font-semibold text-white"
-              style={{ background: 'linear-gradient(135deg, #a855f7, #6366f1)' }}
-              onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
+        {/* Pills row */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="flex flex-wrap items-center gap-3 mb-10"
+        >
+          {services.map((s, i) => (
+            <span
+              key={s}
+              className="px-5 py-2.5 rounded-full text-sm md:text-base text-white border border-white/15 backdrop-blur-sm"
+              style={{
+                background: i === 0
+                  ? 'rgba(255,255,255,0.10)'
+                  : `linear-gradient(135deg, rgba(168,114,66,${0.35 - i * 0.08}), rgba(200,147,104,${0.25 - i * 0.08}))`,
+              }}
             >
-              Start Your Growth Journey
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.04, backgroundColor: 'rgba(255,255,255,0.08)' }}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-4 rounded-xl text-base font-semibold text-white border border-white/15 bg-white/5 transition-colors"
-              onClick={() => document.getElementById('featured-work')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Our Work →
-            </motion.button>
-          </motion.div>
+              {s}
+            </span>
+          ))}
 
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-            className="flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t border-white/10"
+          <motion.a
+            href="#growth-ecosystem"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="ml-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm md:text-base text-white border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
           >
-            {stats.map((s) => (
-              <div key={s.label}>
-                <div className="text-3xl md:text-4xl font-bold text-white">{s.value}</div>
-                <div className="text-sm text-white/40 mt-1">{s.label}</div>
+            <span className="text-[#d4a576]">↗</span> All services
+          </motion.a>
+        </motion.div>
+
+        {/* Divider */}
+        <div className="border-t border-white/10 mb-10" />
+
+        {/* Tagline + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <p className="text-2xl md:text-3xl text-white/85 leading-snug mb-8">
+            We design, develop, and maintain digital products that{' '}
+            <span className="font-serif-italic text-[#d4a576]">make an impact</span>
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-7 py-3 rounded-full text-sm md:text-base text-white border border-white/25 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/50 transition-colors"
+          >
+            Book a call
+          </motion.button>
+        </motion.div>
+
+        {/* Preview cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
+          {previewCards.map((card) => (
+            <motion.div
+              key={card.title}
+              whileHover={{ y: -6 }}
+              className="relative rounded-2xl border border-white/10 overflow-hidden h-48 md:h-64 cursor-pointer group"
+              style={{ background: card.gradient }}
+            >
+              <div className="absolute inset-0 p-6 md:p-7 flex flex-col justify-end">
+                <span className="text-xs uppercase tracking-widest text-white/65 mb-1">{card.tag}</span>
+                <span className="text-2xl md:text-3xl font-bold text-white">{card.title}</span>
               </div>
-            ))}
-          </motion.div>
-        </div>
+              <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </Container>
     </section>
   )

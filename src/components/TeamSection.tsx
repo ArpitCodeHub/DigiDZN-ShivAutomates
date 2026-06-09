@@ -3,21 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const team = [
-  { name: 'Alex Rivera',  role: 'Strategy Director',           initials: 'AR', color: '#a855f7', bio: 'Leads strategic initiatives with 12+ years of digital marketing expertise. Turns data into growth strategies.', skills: ['Strategy','Analytics','Growth'] },
-  { name: 'Sam Chang',    role: 'Technical Lead',              initials: 'SC', color: '#6366f1', bio: 'Full-stack expert overseeing technical implementations. Passionate about clean, scalable architecture.', skills: ['Dev','Architecture','Cloud'] },
-  { name: 'Jordan Lee',   role: 'Content Strategist',          initials: 'JL', color: '#ec4899', bio: 'Crafts compelling narratives that convert. Expert in content marketing, copywriting, and SEO storytelling.', skills: ['Content','SEO','Creative'] },
-  { name: 'Morgan Davis', role: 'Creative Director',           initials: 'MD', color: '#f59e0b', bio: 'Brings visual excellence to every project. Ensures your brand stands out with precision design.', skills: ['Design','Branding','UX'] },
-  { name: 'Casey Thompson','role': 'Analytics Specialist',     initials: 'CT', color: '#14b8a6', bio: 'Transforms raw data into strategic insights. Obsessed with metrics and proving marketing ROI.', skills: ['Analytics','Data','Reporting'] },
-  { name: 'Riley Martinez', role: 'Account Manager',           initials: 'RM', color: '#06b6d4', bio: 'Your dedicated partner ensuring seamless communication and exceptional service delivery.', skills: ['Account Mgmt','CX','Projects'] },
-  { name: 'Taylor Kim',   role: 'SEO Specialist',              initials: 'TK', color: '#84cc16', bio: 'Gets your brand visible where it matters. Expert in technical SEO and organic growth strategy.', skills: ['SEO','Technical','Links'] },
-  { name: 'Jamie Chen',   role: 'Performance Marketing Lead',  initials: 'JC', color: '#ef4444', bio: 'Maximises marketing ROI through data-driven paid advertising strategies at scale.', skills: ['Paid Ads','PPC','CRO'] },
+  { name: 'Alex Rivera',  role: 'Strategy Director',           initials: 'AR', color: '#a87242', bio: 'Leads strategic initiatives with 12+ years of digital marketing expertise. Turns data into growth strategies.', skills: ['Strategy','Analytics','Growth'] },
+  { name: 'Sam Chang',    role: 'Technical Lead',              initials: 'SC', color: '#c89368', bio: 'Full-stack expert overseeing technical implementations. Passionate about clean, scalable architecture.', skills: ['Dev','Architecture','Cloud'] },
+  { name: 'Jordan Lee',   role: 'Content Strategist',          initials: 'JL', color: '#d4a576', bio: 'Crafts compelling narratives that convert. Expert in content marketing, copywriting, and SEO storytelling.', skills: ['Content','SEO','Creative'] },
+  { name: 'Morgan Davis', role: 'Creative Director',           initials: 'MD', color: '#8b5e3c', bio: 'Brings visual excellence to every project. Ensures your brand stands out with precision design.', skills: ['Design','Branding','UX'] },
+  { name: 'Casey Thompson','role': 'Analytics Specialist',     initials: 'CT', color: '#a87242', bio: 'Transforms raw data into strategic insights. Obsessed with metrics and proving marketing ROI.', skills: ['Analytics','Data','Reporting'] },
+  { name: 'Riley Martinez', role: 'Account Manager',           initials: 'RM', color: '#c89368', bio: 'Your dedicated partner ensuring seamless communication and exceptional service delivery.', skills: ['Account Mgmt','CX','Projects'] },
+  { name: 'Taylor Kim',   role: 'SEO Specialist',              initials: 'TK', color: '#d4a576', bio: 'Gets your brand visible where it matters. Expert in technical SEO and organic growth strategy.', skills: ['SEO','Technical','Links'] },
+  { name: 'Jamie Chen',   role: 'Performance Marketing Lead',  initials: 'JC', color: '#5a3a22', bio: 'Maximises marketing ROI through data-driven paid advertising strategies at scale.', skills: ['Paid Ads','PPC','CRO'] },
 ]
 
 export default function TeamSection() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <Section id="team" className="py-24 md:py-32 bg-[#0a0a0a]">
+    <Section id="team" className="py-24 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -27,9 +27,9 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-4">The Team</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">The Team</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            The people behind<br />your growth
+            The people <span className="font-serif-italic font-normal text-[#d4a576]">behind</span><br />your growth
           </h2>
         </motion.div>
 

@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const testimonials = [
-  { id: 1, quote: 'DigiDZN transformed our online presence completely. Our lead generation increased by 300% within the first quarter. Truly exceptional work.', name: 'Sarah Johnson', company: 'TechStart Inc.', role: 'Marketing Director', initials: 'SJ', color: '#a855f7' },
-  { id: 2, quote: 'The strategic approach and attention to detail was exceptional. Our website now ranks for over 200 keywords we never thought possible.', name: 'Michael Chen', company: 'Growth Co.', role: 'CEO', initials: 'MC', color: '#6366f1' },
-  { id: 3, quote: "We've worked with several agencies, but DigiDZN's focus on actual business outcomes made them stand out. The ROI has been remarkable.", name: 'Jessica Martinez', company: 'Premium Services LLC', role: 'Founder', initials: 'JM', color: '#14b8a6' },
-  { id: 4, quote: 'From day one, DigiDZN understood our vision and executed beyond expectations. Their team is knowledgeable, responsive, and genuinely invested.', name: 'David Park', company: 'Innovation Labs', role: 'Product Lead', initials: 'DP', color: '#f59e0b' },
+  { id: 1, quote: 'DigiDZN transformed our online presence completely. Our lead generation increased by 300% within the first quarter. Truly exceptional work.', name: 'Sarah Johnson', company: 'TechStart Inc.', role: 'Marketing Director', initials: 'SJ', color: '#a87242' },
+  { id: 2, quote: 'The strategic approach and attention to detail was exceptional. Our website now ranks for over 200 keywords we never thought possible.', name: 'Michael Chen', company: 'Growth Co.', role: 'CEO', initials: 'MC', color: '#c89368' },
+  { id: 3, quote: "We've worked with several agencies, but DigiDZN's focus on actual business outcomes made them stand out. The ROI has been remarkable.", name: 'Jessica Martinez', company: 'Premium Services LLC', role: 'Founder', initials: 'JM', color: '#d4a576' },
+  { id: 4, quote: 'From day one, DigiDZN understood our vision and executed beyond expectations. Their team is knowledgeable, responsive, and genuinely invested.', name: 'David Park', company: 'Innovation Labs', role: 'Product Lead', initials: 'DP', color: '#8b5e3c' },
 ]
 
 export default function TestimonialsSection() {
@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
   const t = testimonials[active]
 
   return (
-    <Section id="testimonials" className="py-24 md:py-32 bg-[#0d0d0d]">
+    <Section id="testimonials" className="py-24 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -24,9 +24,9 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold text-purple-400 uppercase tracking-widest mb-4">Testimonials</p>
+          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Testimonials</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Clients who grew<br />with us
+            Clients who <span className="font-serif-italic font-normal text-[#d4a576]">grew</span><br />with us
           </h2>
         </motion.div>
 
