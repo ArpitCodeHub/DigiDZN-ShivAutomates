@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import PositioningSection from './PositioningSection'
 import AboutSection from './AboutSection'
@@ -21,36 +21,206 @@ const navLinks = [
 ]
 
 function Navbar({ onContactClick }: { onContactClick: () => void }) {
+  const [open, setOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
+  const closeAndScroll = (href: string) => {
+    setOpen(false)
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    }, 250)
+  }
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0a0807]/80 backdrop-blur-md border-b border-white/5">
-      <Container maxWidth="xl">
-        <div className="flex items-center justify-between h-14 md:h-20">
-          <span className="text-sm md:text-lg font-black text-white tracking-[0.2em]">
-            DIGIDZN
-          </span>
-          <div className="hidden md:flex items-center gap-6 lg:gap-10">
-            {navLinks.map(l => (
-              <a key={l.label} href={l.href}
-                className="text-sm text-white/70 hover:text-white transition-colors">
-                {l.label}
-              </a>
-            ))}
-          </div>
-          <button
-            onClick={onContactClick}
-            aria-label="Contact"
-            className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors"
-          >
-            <span className="grid grid-cols-2 gap-0.5">
-              <span className="w-1 h-1 rounded-full bg-current" />
-              <span className="w-1 h-1 rounded-full bg-current" />
-              <span className="w-1 h-1 rounded-full bg-current" />
-              <span className="w-1 h-1 rounded-full bg-current" />
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0a0807]/80 backdrop-blur-md border-b border-white/5">
+        <Container maxWidth="xl">
+          <div className="flex items-center justify-between h-14 md:h-20">
+            <span className="text-sm md:text-lg font-black text-white tracking-[0.2em]">
+              DIGIDZN
             </span>
-          </button>
-        </div>
-      </Container>
-    </nav>
+
+            {/* Desktop links */}
+            <div className="hidden md:flex items-center gap-6 lg:gap-10">
+              {navLinks.map(l => (
+                <a key={l.label} href={l.href}
+                  className="text-sm text-white/70 hover:text-white transition-colors">
+                  {l.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Desktop contact button */}
+            <button
+              onClick={onContactClick}
+              aria-label="Contact"
+              className="hidden md:flex w-10 h-10 rounded-full border border-white/20 items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors"
+            >
+              <span className="grid grid-cols-2 gap-0.5">
+                <span className="w-1 h-1 rounded-full bg-current" />
+                <span className="w-1 h-1 rounded-full bg-current" />
+                <span className="w-1 h-1 rounded-full bg-current" />
+                <span className="w-1 h-1 rounded-full bg-current" />
+              </span>
+            </button>
+
+            {/* Mobile hamburger */}
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={open}
+              className="md:hidden w-10 h-10 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 text-white hover:border-white/40 transition-colors"
+            >
+              <span className="w-4 h-px bg-current" />
+              <span className="w-4 h-px bg-current" />
+              <span className="w-2.5 h-px bg-current ml-1.5" />
+            </button>
+          </div>
+        </Container>
+      </nav>
+
+      {/* Mobile fullscreen menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden fixed inset-0 z-50 bg-[#0a0807]"
+          >
+            {/* Brown ambient glow */}
+            <div className="pointer-events-none absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full"
+              style={{ background: 'radial-gradient(closest-side, rgba(168,114,66,0.25), transparent 70%)', filter: 'blur(60px)' }} />
+
+            <div className="relative h-full flex flex-col">
+              {/* Header */}
+              <div className="flex items-center justify-between h-14 px-6 border-b border-white/5">
+                <span className="text-sm font-black text-white tracking-[0.2em]">DIGIDZN</span>
+                <button
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-white/40 transition-colors"
+                >
+                  <span className="relative w-4 h-4">
+                    <span className="absolute inset-0 m-auto w-4 h-px bg-current rotate-45" />
+                    <span className="absolute inset-0 m-auto w-4 h-px bg-current -rotate-45" />
+                  </span>
+                </button>
+              </div>
+
+              {/* Menu body */}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+                }}
+                className="flex-1 overflow-y-auto px-6 py-8"
+              >
+                {/* Main nav links */}
+                <ul className="space-y-1 mb-8">
+                  {navLinks.map(l => (
+                    <motion.li
+                      key={l.label}
+                      variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}
+                    >
+                      <button
+                        onClick={() => closeAndScroll(l.href)}
+                        className="w-full flex items-center justify-between text-left py-4 border-b border-white/8 text-2xl font-medium text-white hover:text-[#d4a576] transition-colors"
+                      >
+                        {l.label}
+                        <span className="text-white/30 text-xl">↗</span>
+                      </button>
+                    </motion.li>
+                  ))}
+
+                  {/* Expandable "All Services" */}
+                  <motion.li variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}>
+                    <button
+                      onClick={() => setServicesOpen(v => !v)}
+                      aria-expanded={servicesOpen}
+                      className="w-full flex items-center justify-between py-4 border-b border-white/8 text-2xl font-medium text-white hover:text-[#d4a576] transition-colors"
+                    >
+                      All Services
+                      <motion.span
+                        animate={{ rotate: servicesOpen ? 180 : 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="text-[#c89368] text-xl"
+                      >
+                        ⌄
+                      </motion.span>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <ul className="pl-4 py-2">
+                            {[
+                              { label: 'Design',      desc: 'Brand & UX/UI design' },
+                              { label: 'Development', desc: 'Modern web & app build' },
+                              { label: 'Maintenance', desc: 'Continuous support' },
+                            ].map(s => (
+                              <li key={s.label}>
+                                <button
+                                  onClick={() => closeAndScroll('#growth-ecosystem')}
+                                  className="w-full text-left py-3 group"
+                                >
+                                  <div className="flex items-baseline gap-3">
+                                    <span className="text-base font-semibold text-white group-hover:text-[#d4a576] transition-colors">
+                                      {s.label}
+                                    </span>
+                                    <span className="text-xs text-white/40">{s.desc}</span>
+                                  </div>
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.li>
+                </ul>
+
+                {/* CTA */}
+                <motion.button
+                  variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+                  onClick={() => { setOpen(false); setTimeout(onContactClick, 250) }}
+                  className="w-full py-4 rounded-full text-base font-semibold text-white"
+                  style={{ background: 'linear-gradient(135deg, #a87242, #c89368)' }}
+                >
+                  Book a call →
+                </motion.button>
+
+                <motion.p
+                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                  className="text-center text-xs text-white/30 mt-8"
+                >
+                  Engineering attention into growth
+                </motion.p>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
