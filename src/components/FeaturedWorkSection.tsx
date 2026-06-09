@@ -13,6 +13,7 @@ export interface Project {
   metric: string
   metricLabel: string
   color: string
+  image: string
 }
 
 const PROJECTS: Project[] = [
@@ -26,6 +27,7 @@ const PROJECTS: Project[] = [
     result: '+250% organic traffic in 6 months',
     metric: '250%', metricLabel: 'Traffic increase',
     color: '#a87242',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop',
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ const PROJECTS: Project[] = [
     result: '+180% qualified leads, 3.2x ROI',
     metric: '3.2×', metricLabel: 'Marketing ROI',
     color: '#c89368',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop',
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ const PROJECTS: Project[] = [
     result: '+340% service inquiries from local search',
     metric: '340%', metricLabel: 'Local inquiries',
     color: '#d4a576',
+    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&q=80&auto=format&fit=crop',
   },
   {
     id: 4,
@@ -59,6 +63,7 @@ const PROJECTS: Project[] = [
     result: '+45% brand awareness increase',
     metric: '45%', metricLabel: 'Brand awareness',
     color: '#8b5e3c',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80&auto=format&fit=crop',
   },
 ]
 
@@ -73,30 +78,43 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
       onClick={() => onClick(project)}
       className="group relative rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm cursor-pointer overflow-hidden"
     >
-      {/* Color accent top bar */}
-      <div className="h-1 w-full" style={{ background: project.color }} />
+      {/* Image header */}
+      <div className="relative h-52 overflow-hidden bg-[#1a120c]">
+        <img
+          src={project.image}
+          alt={`${project.title} – ${project.tag}`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Warm tint blend */}
+        <div className="absolute inset-0 mix-blend-multiply opacity-40"
+          style={{ background: `linear-gradient(135deg, #1a120c 0%, ${project.color} 120%)` }} />
+        {/* Bottom fade for tag readability */}
+        <div className="absolute inset-x-0 bottom-0 h-20"
+          style={{ background: 'linear-gradient(180deg, transparent, rgba(10,8,7,0.85))' }} />
 
-      <div className="p-8">
-        {/* Tag */}
+        {/* Tag pinned on image */}
         <span
-          className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-5"
-          style={{ background: `${project.color}20`, color: project.color }}
+          className="absolute top-4 left-4 inline-block text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm"
+          style={{ background: `${project.color}40`, color: '#fff', border: `1px solid ${project.color}80` }}
         >
           {project.tag}
         </span>
+      </div>
 
+      <div className="p-7">
         {/* Title */}
         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-sm text-white/50 leading-relaxed mb-8">
+        <p className="text-sm text-white/50 leading-relaxed mb-7">
           {project.clientContext}
         </p>
 
         {/* Metric */}
-        <div className="flex items-end gap-3 pt-6 border-t border-white/8">
-          <span className="text-4xl font-bold text-white" style={{ color: project.color }}>
+        <div className="flex items-end gap-3 pt-5 border-t border-white/8">
+          <span className="text-4xl font-bold" style={{ color: project.color }}>
             {project.metric}
           </span>
           <span className="text-sm text-white/40 mb-1">{project.metricLabel}</span>
@@ -125,12 +143,23 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="h-1 rounded-t-2xl" style={{ background: project.color }} />
-        <div className="p-8 md:p-10">
+        {/* Hero image */}
+        <div className="relative h-48 md:h-56 overflow-hidden rounded-t-2xl bg-[#1a120c]">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 mix-blend-multiply opacity-50"
+            style={{ background: `linear-gradient(135deg, #1a120c, ${project.color})` }} />
+          <div className="absolute inset-x-0 bottom-0 h-24"
+            style={{ background: 'linear-gradient(180deg, transparent, rgba(17,13,10,1))' }} />
+        </div>
+        <div className="p-8 md:p-10 -mt-10 relative">
           <div className="flex items-start justify-between mb-8">
             <div>
               <span className="text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block"
-                style={{ background: `${project.color}20`, color: project.color }}>
+                style={{ background: `${project.color}25`, color: '#fff', border: `1px solid ${project.color}80` }}>
                 {project.tag}
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>

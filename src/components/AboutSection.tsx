@@ -2,9 +2,30 @@ import { motion } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const collage = [
-  { rotate: -6,  top: '0%',   left: '8%',  z: 3, gradient: 'linear-gradient(135deg,#3a2a1f,#a87242)' },
-  { rotate:  4,  top: '30%',  left: '32%', z: 2, gradient: 'linear-gradient(135deg,#5a3a22,#c89368)' },
-  { rotate: -3,  top: '58%',  left: '6%',  z: 1, gradient: 'linear-gradient(135deg,#2a1d12,#8b5e3c)' },
+  {
+    rotate: -6,
+    top: '0%',
+    left: '8%',
+    z: 3,
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80&auto=format&fit=crop',
+    alt: 'Team collaborating around laptops',
+  },
+  {
+    rotate: 4,
+    top: '30%',
+    left: '32%',
+    z: 2,
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80&auto=format&fit=crop',
+    alt: 'Designers working at desk',
+  },
+  {
+    rotate: -3,
+    top: '58%',
+    left: '6%',
+    z: 1,
+    image: 'https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=800&q=80&auto=format&fit=crop',
+    alt: 'Co-working session',
+  },
 ]
 
 export default function AboutSection() {
@@ -22,14 +43,18 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0, rotate: p.rotate }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="absolute w-[260px] h-[170px] md:w-[320px] md:h-[210px] rounded-xl border border-white/10 shadow-2xl"
-                style={{ top: p.top, left: p.left, zIndex: p.z, background: p.gradient }}
+                className="absolute w-[260px] h-[170px] md:w-[320px] md:h-[210px] rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-[#1a120c]"
+                style={{ top: p.top, left: p.left, zIndex: p.z }}
               >
-                <div className="w-full h-full rounded-xl flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-2xl">
-                    {i === 0 ? '👥' : i === 1 ? '💼' : '📊'}
-                  </div>
-                </div>
+                <img
+                  src={p.image}
+                  alt={p.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                {/* Subtle warm tint */}
+                <div className="absolute inset-0 mix-blend-multiply opacity-25"
+                  style={{ background: 'linear-gradient(135deg,#3a2a1f,#a87242)' }} />
               </motion.div>
             ))}
 

@@ -4,8 +4,16 @@ import { Container } from '../sections/Section'
 const services = ['Design', 'Development', 'Maintenance']
 
 const previewCards = [
-  { title: 'UniLearn',  tag: 'EdTech',     gradient: 'linear-gradient(135deg,#3a2a1f 0%,#a87242 100%)' },
-  { title: 'Homeway',   tag: 'Real Estate',gradient: 'linear-gradient(135deg,#5a3a22 0%,#c89368 100%)' },
+  {
+    title: 'UniLearn',
+    tag: 'EdTech',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop',
+  },
+  {
+    title: 'Homeway',
+    tag: 'Real Estate',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&auto=format&fit=crop',
+  },
 ]
 
 export default function PositioningSection() {
@@ -115,14 +123,23 @@ export default function PositioningSection() {
             <motion.div
               key={card.title}
               whileHover={{ y: -6 }}
-              className="relative rounded-2xl border border-white/10 overflow-hidden h-48 md:h-64 cursor-pointer group"
-              style={{ background: card.gradient }}
+              className="relative rounded-2xl border border-white/10 overflow-hidden h-48 md:h-64 cursor-pointer group bg-[#1a120c]"
             >
-              <div className="absolute inset-0 p-6 md:p-7 flex flex-col justify-end">
-                <span className="text-xs uppercase tracking-widest text-white/65 mb-1">{card.tag}</span>
+              <img
+                src={card.image}
+                alt={`${card.title} – ${card.tag}`}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {/* Brown tint overlay + bottom gradient for text */}
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(10,8,7,0) 40%, rgba(10,8,7,0.85) 100%)' }} />
+              <div className="absolute inset-0 mix-blend-multiply opacity-30" style={{ background: 'linear-gradient(135deg,#3a2a1f 0%,#a87242 100%)' }} />
+
+              <div className="absolute inset-0 p-6 md:p-7 flex flex-col justify-end z-10">
+                <span className="text-xs uppercase tracking-widest text-white/75 mb-1">{card.tag}</span>
                 <span className="text-2xl md:text-3xl font-bold text-white">{card.title}</span>
               </div>
-              <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/30 flex items-center justify-center text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+              <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-10">↗</div>
             </motion.div>
           ))}
         </motion.div>
