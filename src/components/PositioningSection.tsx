@@ -32,19 +32,19 @@ export default function PositioningSection() {
         }}
       />
 
-      <Container maxWidth="xl" className="relative z-10 pt-32 pb-12 md:pt-40 md:pb-16">
+      <Container maxWidth="xl" className="relative z-10 pt-28 pb-12 md:pt-40 md:pb-16">
         {/* Massive wordmark */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center md:text-left leading-none mb-10"
+          className="text-center md:text-left leading-none mb-8 md:mb-10"
         >
           <h1 className="leading-[0.85] tracking-tight">
             <span
-              className="block font-black text-white"
+              className="block font-black text-white break-words"
               style={{
-                fontSize: 'clamp(64px, 14vw, 220px)',
+                fontSize: 'clamp(56px, 14vw, 220px)',
                 letterSpacing: '-0.04em',
                 background: 'linear-gradient(180deg,#ffffff 0%,#e8d9c9 100%)',
                 WebkitBackgroundClip: 'text',
@@ -62,12 +62,12 @@ export default function PositioningSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="flex flex-wrap items-center gap-3 mb-10"
+          className="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 md:mb-10"
         >
           {services.map((s, i) => (
             <span
               key={s}
-              className="px-5 py-2.5 rounded-full text-sm md:text-base text-white border border-white/15 backdrop-blur-sm"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-white/15 backdrop-blur-sm"
               style={{
                 background: i === 0
                   ? 'rgba(255,255,255,0.10)'
@@ -82,23 +82,23 @@ export default function PositioningSection() {
             href="#growth-ecosystem"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="ml-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm md:text-base text-white border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+            className="ml-auto inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
           >
             <span className="text-[#d4a576]">↗</span> All services
           </motion.a>
         </motion.div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 mb-10" />
+        <div className="border-t border-white/10 mb-8 md:mb-10" />
 
         {/* Tagline + CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-12 px-2"
         >
-          <p className="text-2xl md:text-3xl text-white/85 leading-snug mb-8">
+          <p className="text-xl sm:text-2xl md:text-3xl text-white/85 leading-snug mb-7 md:mb-8">
             We design, develop, and maintain digital products that{' '}
             <span className="font-serif-italic text-[#d4a576]">make an impact</span>
           </p>
@@ -106,7 +106,7 @@ export default function PositioningSection() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-7 py-3 rounded-full text-sm md:text-base text-white border border-white/25 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/50 transition-colors"
+            className="px-6 sm:px-7 py-3 rounded-full text-sm md:text-base text-white border border-white/25 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/50 transition-colors"
           >
             Book a call
           </motion.button>

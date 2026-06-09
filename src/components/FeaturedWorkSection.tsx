@@ -196,7 +196,7 @@ export default function FeaturedWorkSection() {
   const [selected, setSelected] = useState<Project | null>(null)
 
   return (
-    <Section id="featured-work" className="py-24 md:py-32 bg-[#0a0807]">
+    <Section id="featured-work" className="py-20 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -204,10 +204,10 @@ export default function FeaturedWorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Featured Work</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Featured Work</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 md:mb-6 leading-[1.1]">
             Results that <span className="font-serif-italic font-normal text-[#d4a576]">speak</span><br />for themselves
           </h2>
           <p className="text-lg text-white/50 max-w-2xl">

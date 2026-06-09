@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
   const t = testimonials[active]
 
   return (
-    <Section id="testimonials" className="py-24 md:py-32 bg-[#0a0807]">
+    <Section id="testimonials" className="py-20 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -22,22 +22,22 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Testimonials</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Testimonials</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.1]">
             Clients who <span className="font-serif-italic font-normal text-[#d4a576]">grew</span><br />with us
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
           {/* Sidebar list */}
-          <div className="lg:col-span-2 flex lg:flex-col gap-3">
+          <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-3">
             {testimonials.map((item, i) => (
               <button
                 key={item.id}
                 onClick={() => setActive(i)}
-                className={`flex items-center gap-4 p-4 rounded-xl text-left w-full transition-all duration-300 border ${
+                className={`flex items-center gap-3 lg:gap-4 p-3 lg:p-4 rounded-xl text-left w-full transition-all duration-300 border ${
                   active === i
                     ? 'border-white/20 bg-white/8'
                     : 'border-transparent bg-transparent hover:bg-white/4'
@@ -50,8 +50,8 @@ export default function TestimonialsSection() {
                   {item.initials}
                 </div>
                 <div className="min-w-0">
-                  <div className="text-sm font-semibold text-white truncate">{item.name}</div>
-                  <div className="text-xs text-white/40 truncate">{item.company}</div>
+                  <div className="text-xs sm:text-sm font-semibold text-white truncate">{item.name}</div>
+                  <div className="text-[11px] sm:text-xs text-white/40 truncate">{item.company}</div>
                 </div>
               </button>
             ))}
@@ -66,20 +66,20 @@ export default function TestimonialsSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="rounded-2xl border border-white/8 bg-white/3 p-8 md:p-10 h-full"
+                className="rounded-2xl border border-white/8 bg-white/3 p-6 md:p-8 lg:p-10 h-full"
               >
                 {/* Stars */}
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-5 md:mb-6">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} style={{ color: t.color }}>★</span>
                   ))}
                 </div>
 
-                <blockquote className="text-xl md:text-2xl text-white/85 leading-relaxed font-light mb-8">
+                <blockquote className="text-lg sm:text-xl md:text-2xl text-white/85 leading-relaxed font-light mb-6 md:mb-8">
                   "{t.quote}"
                 </blockquote>
 
-                <div className="flex items-center gap-4 pt-6 border-t border-white/8">
+                <div className="flex items-center gap-4 pt-5 md:pt-6 border-t border-white/8">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center font-bold"
                     style={{ background: `${t.color}25`, color: t.color }}

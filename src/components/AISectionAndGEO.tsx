@@ -27,7 +27,7 @@ const cards = [
 
 export default function AISectionAndGEO() {
   return (
-    <Section id="ai-geo" className="py-24 md:py-32 bg-[#0d0a08]">
+    <Section id="ai-geo" className="py-20 md:py-32 bg-[#0d0a08]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -35,16 +35,16 @@ export default function AISectionAndGEO() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16 max-w-3xl"
+          className="mb-12 md:mb-16 max-w-3xl"
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">AI & GEO</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">AI & GEO</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 md:mb-6 leading-[1.1]">
             The future of<br />
             <span className="font-serif-italic font-normal" style={{ color: '#d4a576' }}>
               engineered attention
             </span>
           </h2>
-          <p className="text-lg text-white/50 leading-relaxed">
+          <p className="text-base sm:text-lg text-white/50 leading-relaxed">
             The brands winning today aren't just reaching more people — they're reaching the right
             people at the right moment. We combine AI precision with geolocation data to make
             every marketing dollar work harder.

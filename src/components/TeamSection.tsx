@@ -17,7 +17,7 @@ export default function TeamSection() {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <Section id="team" className="py-24 md:py-32 bg-[#0a0807]">
+    <Section id="team" className="py-20 md:py-32 bg-[#0a0807]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -25,10 +25,10 @@ export default function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">The Team</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">The Team</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.1]">
             The people <span className="font-serif-italic font-normal text-[#d4a576]">behind</span><br />your growth
           </h2>
         </motion.div>

@@ -22,13 +22,13 @@ const navLinks = [
 
 function Navbar({ onContactClick }: { onContactClick: () => void }) {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0a0807]/70 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0a0807]/80 backdrop-blur-md border-b border-white/5">
       <Container maxWidth="xl">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <span className="text-base md:text-lg font-black text-white tracking-[0.2em]">
+        <div className="flex items-center justify-between h-14 md:h-20">
+          <span className="text-sm md:text-lg font-black text-white tracking-[0.2em]">
             DIGIDZN
           </span>
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6 lg:gap-10">
             {navLinks.map(l => (
               <a key={l.label} href={l.href}
                 className="text-sm text-white/70 hover:text-white transition-colors">
@@ -39,7 +39,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
           <button
             onClick={onContactClick}
             aria-label="Contact"
-            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors"
+            className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/40 transition-colors"
           >
             <span className="grid grid-cols-2 gap-0.5">
               <span className="w-1 h-1 rounded-full bg-current" />
@@ -174,8 +174,8 @@ function LeadFormModal({ onClose }: { onClose: () => void }) {
 
 function FinalCTA({ onOpen }: { onOpen: () => void }) {
   return (
-    <section id="final-cta" className="py-32 md:py-40 bg-[#0a0807] relative overflow-hidden">
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
+    <section id="final-cta" className="py-24 md:py-40 bg-[#0a0807] relative overflow-hidden">
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full"
         style={{ background: 'radial-gradient(closest-side, rgba(168,114,66,0.35), transparent 70%)', filter: 'blur(40px)' }} />
 
       <Container maxWidth="lg" className="relative z-10 text-center">
@@ -185,12 +185,12 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-6">Ready to grow?</p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-8">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-5 md:mb-6">Ready to grow?</p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 md:mb-8">
             Let's engineer<br />
             <span className="font-serif-italic font-normal" style={{ color: '#d4a576' }}>your growth</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/55 max-w-xl mx-auto mb-12 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/55 max-w-xl mx-auto mb-10 md:mb-12 leading-relaxed px-4">
             Ready to transform your business into an attention-capturing powerhouse?
             Let's start the conversation.
           </p>
@@ -198,7 +198,7 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
             onClick={onOpen}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="px-9 py-4 rounded-full text-base md:text-lg font-semibold text-white border border-white/30 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/60 transition-colors"
+            className="px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold text-white border border-white/30 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/60 transition-colors"
           >
             Book a call →
           </motion.button>
@@ -210,14 +210,14 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/8 bg-[#0a0807] py-12">
+    <footer className="border-t border-white/8 bg-[#0a0807] py-10 md:py-12">
       <Container maxWidth="xl">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-center md:text-left">
           <span className="text-base font-black text-white tracking-[0.2em]">DIGIDZN</span>
-          <p className="text-sm text-white/30">© 2026 DigiDZN. Engineering attention into growth.</p>
-          <div className="flex gap-6">
+          <p className="text-xs sm:text-sm text-white/30 order-3 md:order-2">© 2026 DigiDZN. Engineering attention into growth.</p>
+          <div className="flex gap-5 sm:gap-6 order-2 md:order-3">
             {['Privacy', 'Terms', 'Contact'].map(l => (
-              <a key={l} href="#" className="text-sm text-white/35 hover:text-white/80 transition-colors">{l}</a>
+              <a key={l} href="#" className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-colors">{l}</a>
             ))}
           </div>
         </div>

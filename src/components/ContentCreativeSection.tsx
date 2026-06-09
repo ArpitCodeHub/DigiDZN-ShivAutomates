@@ -11,7 +11,7 @@ const items = [
 
 export default function ContentCreativeSection() {
   return (
-    <Section id="content-creative" className="py-24 md:py-32 bg-[#0d0a08]">
+    <Section id="content-creative" className="py-20 md:py-32 bg-[#0d0a08]">
       <Container maxWidth="xl">
         {/* Header */}
         <motion.div
@@ -19,13 +19,13 @@ export default function ContentCreativeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <p className="text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Creative Work</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Creative Work</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 md:mb-6 leading-[1.1]">
             Content that<br /><span className="font-serif-italic font-normal text-[#d4a576]">converts</span>
           </h2>
-          <p className="text-lg text-white/50 max-w-2xl">
+          <p className="text-base sm:text-lg text-white/50 max-w-2xl">
             Every piece of content we create is engineered with a goal: attract the right audience, build trust, and drive action.
           </p>
         </motion.div>
