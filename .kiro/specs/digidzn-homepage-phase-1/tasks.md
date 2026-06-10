@@ -69,7 +69,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Implement `prefers-reduced-motion` support to disable animations when requested
   - _Requirements: 12.2, 12.6, 13.1-13.6_
 
-- [-] 8. Build PositioningSection with outcome-focused messaging
+- [ ] 8. Build PositioningSection with outcome-focused messaging
   - Create PositioningSection component with headline "Engineering Attention Into Growth"
   - Add responsive typography:
     - Mobile: h1 28px, body 16px
@@ -80,7 +80,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Implement premium spacing with max-width constraint
   - _Requirements: 4.1-4.6, 13.2, 13.3_
 
-- [-] 9. Implement FeaturedWorkSection with project grid and animations
+- [ ] 9. Implement FeaturedWorkSection with project grid and animations
   - Create FeaturedWorkSection component with 3-5 project data structure
   - Build responsive grid: 1 col mobile, 1 col tablet, 2 col desktop
   - Implement ProjectCard sub-component with:
@@ -91,7 +91,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Implement modal or case-study link on click
   - _Requirements: 5.1-5.6_
 
-- [-] 10. Create GrowthEcosystemSection with network visualization
+- [ ] 10. Create GrowthEcosystemSection with network visualization
   - Build GrowthEcosystemSection component with 7 interconnected nodes (SEO, GEO, Content, Branding, Websites, Social, Performance Marketing)
   - Implement network diagram or hub-and-spoke layout (not traditional cards)
   - Add hover/focus state that highlights node and its connections
@@ -103,7 +103,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Add descriptions and relationship information on interaction
   - _Requirements: 6.1-6.6_
 
-- [-] 11. Build AISectionAndGEO with innovation positioning
+- [ ] 11. Build AISectionAndGEO with innovation positioning
   - Create AISectionAndGEO component highlighting future-focused capabilities
   - Implement headline "The Future of Attention" with forward-looking messaging
   - Add body content explaining AI and geolocation contributions to growth
@@ -112,7 +112,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Add optional feature grid or concept cards with hover animations
   - _Requirements: 7.1-7.6_
 
-- [-] 12. Create ContentCreativeSection with gallery and lazy loading
+- [ ] 12. Create ContentCreativeSection with gallery and lazy loading
   - Build ContentCreativeSection component with gallery grid layout
   - Implement responsive grid: 1 col mobile, 2 col tablet, 3 col desktop masonry
   - Add Intersection Observer for lazy loading images below the fold
@@ -124,7 +124,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Add video autoplay in modal (muted)
   - _Requirements: 8.1-8.6, 14.3_
 
-- [-] 13. Build TestimonialsSection with carousel and interactions
+- [ ] 13. Build TestimonialsSection with carousel and interactions
   - Create TestimonialsSection component with client testimonial data
   - Implement carousel/grid layout:
     - Desktop: 3-column grid or 1-at-a-time carousel
@@ -136,7 +136,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Add optional star rating display
   - _Requirements: 9.1-9.6_
 
-- [-] 14. Build TeamSection with member cards and reveal animations
+- [ ] 14. Build TeamSection with member cards and reveal animations
   - Create TeamSection component with team member grid
   - Implement responsive grid:
     - Mobile: 2 columns
@@ -151,7 +151,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Implement focus states for keyboard navigation
   - _Requirements: 10.1-10.6_
 
-- [-] 15. Create FinalCTASection with prominent call-to-action
+- [ ] 15. Create FinalCTASection with prominent call-to-action
   - Build FinalCTASection component with large headline "Let's Engineer Your Growth"
   - Add subheading with brief value proposition or urgency message
   - Implement CTA button with:
@@ -163,7 +163,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Implement premium spacing and background visual interest
   - _Requirements: 11.1-11.6_
 
-- [~] 16. Create LeadFormModal component with validation
+- [ ] 16. Create LeadFormModal component with validation
   - Build LeadFormModal component accepting form state handlers
   - Implement form fields: Name (required), Email (required), Company (optional), Message (optional)
   - Add real-time validation:
@@ -176,7 +176,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Disable submit button until all required fields are valid
   - _Requirements: 18.1, 18.2_
 
-- [~] 17. Implement Supabase lead submission integration
+- [ ] 17. Implement Supabase lead submission integration
   - Integrate Supabase client for lead data insertion
   - Implement `handleSubmit` function that:
     - Creates lead object with name, email, company, message, source, timestamp
@@ -188,7 +188,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Prevent duplicate submissions (disable button during submission)
   - _Requirements: 18.3-18.6_
 
-- [~] 18. Implement scroll-triggered section animations with ScrollTrigger
+- [ ] 18. Implement scroll-triggered section animations with ScrollTrigger
   - Integrate GSAP ScrollTrigger plugin for viewport-based animations
   - Build entrance animations for each section:
     - Trigger when section 50% visible
@@ -199,7 +199,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Test FPS maintenance during scroll animations
   - _Requirements: 12.2, 12.4, 12.5_
 
-- [~] 19. Apply hover/interaction animations to all interactive elements
+- [ ] 19. Apply hover/interaction animations to all interactive elements
   - Add Framer Motion `whileHover` animations to all buttons, links, cards
   - Implement consistent animation patterns:
     - Scale: 1.02-1.05 depending on element
@@ -210,7 +210,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Add active states for button clicks (scale down slightly)
   - _Requirements: 12.1, 12.2, 12.4_
 
-- [~] 20. Configure environment variables and Supabase setup
+- [ ] 20. Configure environment variables and Supabase setup
   - Create `.env.local` with Supabase URL and API key
   - Verify Supabase project has `leads` table with correct schema
   - Test Supabase client connection from React app
@@ -218,7 +218,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Document all required environment variables in README
   - _Requirements: 1.1, 18.1_
 
-- [~] 21. Test video entry experience across browsers and devices
+- [ ] 21. Test video entry experience across browsers and devices
   - Test video playback on Chrome, Firefox, Safari, Edge (last 2 versions)
   - Verify autoplay + muted behavior on all browsers
   - Test fullscreen scaling on iOS (Safari) and Android (Chrome)
@@ -227,7 +227,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Verify transition animation completes within 1.2s
   - _Requirements: 1.1-1.6, 2.1-2.6, 3.1-3.6, 15.1-15.5_
 
-- [~] 22. Test responsive layout across all breakpoints
+- [ ] 22. Test responsive layout across all breakpoints
   - Test layout at 375px, 480px, 768px, 1024px, 1440px, 2560px
   - Verify column counts adjust correctly for grids
   - Verify typography scaling maintains readability at all sizes
@@ -236,7 +236,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Verify no horizontal scrolling on any breakpoint
   - _Requirements: 13.1-13.6_
 
-- [~] 23. Verify accessibility compliance
+- [ ] 23. Verify accessibility compliance
   - Verify WCAG AA color contrast (4.5:1 for normal text, 3:1 for large text)
   - Test keyboard navigation (Tab, Enter, Shift+Tab)
   - Verify all interactive elements have visible focus rings
@@ -246,7 +246,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Verify form labels associated with inputs via `<label>` or aria-label
   - _Requirements: 17.1-17.6_
 
-- [~] 24. Add SEO meta tags and structured data
+- [ ] 24. Add SEO meta tags and structured data
   - Add meta title, description, keywords tags in `<head>`
   - Implement Open Graph tags (og:title, og:description, og:image, og:url)
   - Add Twitter Card tags for social sharing
@@ -255,7 +255,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Test crawlability with `robots.txt` and `sitemap.xml`
   - _Requirements: 16.1-16.6_
 
-- [~] 25. Optimize video asset and images
+- [ ] 25. Optimize video asset and images
   - Compress hero video to MP4 format (H.264, AAC audio)
   - Create alternative WebM format for browser compatibility
   - Target video file size < 10MB for 4G delivery
@@ -264,7 +264,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Configure lazy loading for below-the-fold images
   - _Requirements: 14.1, 14.3_
 
-- [~] 26. Code-split sections with dynamic imports
+- [ ] 26. Code-split sections with dynamic imports
   - Implement dynamic imports for each major section component
   - Use Vite's dynamic import syntax: `import('./components/Section')`
   - Configure chunk size optimization to keep chunks < 100KB
@@ -272,7 +272,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Monitor bundle size with Vite plugin (vite-plugin-visualizer)
   - _Requirements: 14.4_
 
-- [~] 27. Checkpoint - Verify all components render correctly
+- [ ] 27. Checkpoint - Verify all components render correctly
   - Ensure all 8 sections render without errors
   - Check console for no TypeScript or React errors
   - Verify video entry → homepage transition completes smoothly
@@ -280,21 +280,21 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Ensure lead form modal opens and closes properly
   - Ask user if any components need adjustment before proceeding to testing
 
-- [~] 28. Write unit tests for VideoEntry component
+- [ ] 28. Write unit tests for VideoEntry component
   - Test video element renders with correct attributes (autoplay, muted, playsInline)
   - Test video fullscreen container styling (100vw × 100vh)
   - Test video `ended` event triggers `onVideoComplete` callback
   - Test video element does not restart after transition triggered
   - _Requirements: 2.1-2.6_
 
-- [~] 29. Write unit tests for TransitionOverlay component
+- [ ] 29. Write unit tests for TransitionOverlay component
   - Test GSAP timeline executes with correct duration (1.2s total)
   - Test animation sequence: fade out video → scale homepage → fade in
   - Test animation completes and calls completion callback
   - Test user input is blocked during transition
   - _Requirements: 3.1-3.6_
 
-- [~] 30. Write unit tests for form validation logic
+- [ ] 30. Write unit tests for form validation logic
   - Test name field: accepts non-empty strings, rejects empty, respects max 100 chars
   - Test email field: validates email format, rejects invalid emails
   - Test company field: accepts optional, respects max 100 chars
@@ -302,7 +302,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Test submit button: disabled until all required fields valid, enables on valid input
   - _Requirements: 18.2, 18.5_
 
-- [~] 31. Write integration tests for lead form submission
+- [ ] 31. Write integration tests for lead form submission
   - Test form submission with valid data → Supabase insert succeeds
   - Test success message displays after submission
   - Test error message displays if Supabase request fails
@@ -310,47 +310,47 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Test form closes after successful submission
   - _Requirements: 18.3-18.6_
 
-- [~] 32. Write property tests for responsive behavior
+- [ ] 32. Write property tests for responsive behavior
   - Test video entry maintains fullscreen coverage at 50+ random viewport widths (375px–2560px)
   - Test grid column count adjusts correctly: 1 col <768px, 2 col 768–1023px, 3+ col 1024px+
   - Test typography scales proportionally: smaller on mobile, larger on desktop
   - Test touch targets minimum 48px on mobile at 20+ test sizes
   - _Requirements: 13.1-13.6, 2.4_
 
-- [~] 33. Write property tests for animation timing
+- [ ] 33. Write property tests for animation timing
   - Test transition animation completes within 1.2s ± 50ms across 100+ runs
   - Test entrance animations stay within 0.3–0.8s duration at 50+ viewport sizes
   - Test scroll-triggered animations trigger within 200ms of threshold
   - Test FPS does not drop below 30 (mobile) or 45 (desktop) during animations
   - _Requirements: 12.4, 12.5, 3.4, 5.4_
 
-- [~] 34. Write property tests for form validation
+- [ ] 34. Write property tests for form validation
   - Test email validation with 100+ random valid/invalid email inputs
   - Test name validation with 50+ special characters and edge cases
   - Test company field accepts and rejects inputs correctly
   - Test message field respects 500 char limit with unicode characters
   - _Requirements: 18.2, 18.5_
 
-- [~] 35. Write property tests for color contrast accessibility
+- [ ] 35. Write property tests for color contrast accessibility
   - Test text elements maintain 4.5:1 contrast at 100+ random color combinations
   - Test graphical elements maintain 3:1 contrast
   - Test focus ring contrast is sufficient for visibility
   - _Requirements: 17.5_
 
-- [~] 36. Write property tests for heading hierarchy
+- [ ] 36. Write property tests for heading hierarchy
   - Test document contains exactly 1 h1 tag
   - Test all h2 tags are children of h1 context, no h2 orphans
   - Test no heading hierarchy skips (no h3 without h2 parent, etc.)
   - _Requirements: 16.4_
 
-- [~] 37. Checkpoint - Run full test suite and verify coverage
+- [ ] 37. Checkpoint - Run full test suite and verify coverage
   - Run all unit tests → pass with 100% component coverage
   - Run all integration tests → pass lead form submission end-to-end
   - Run all property tests → pass across minimum 100 iterations per property
   - Verify no critical errors in test output
   - Ask user if any test failures need resolution before optimization
 
-- [~] 38. Run Lighthouse audit and analyze results
+- [ ] 38. Run Lighthouse audit and analyze results
   - Run Lighthouse on desktop (target 80+ score)
   - Run Lighthouse on mobile (target 70+ score)
   - Identify performance bottlenecks (slow sections, large assets)
@@ -358,7 +358,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Document findings for optimization phase
   - _Requirements: 14.6_
 
-- [~] 39. Optimize bundle size and code-splitting
+- [ ] 39. Optimize bundle size and code-splitting
   - Analyze bundle with vite-plugin-visualizer
   - Identify largest dependencies (GSAP, Framer Motion, unused code)
   - Tree-shake unused GSAP/Framer Motion features
@@ -366,7 +366,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Target final bundle < 100KB (gzipped)
   - _Requirements: 14.4, 14.5_
 
-- [~] 40. Test page load performance on 4G network
+- [ ] 40. Test page load performance on 4G network
   - Simulate 4G connection in browser DevTools
   - Measure Time to First Byte (TTFB)
   - Measure First Contentful Paint (FCP)
@@ -374,7 +374,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Identify and optimize slow assets
   - _Requirements: 14.2_
 
-- [~] 41. Test browser compatibility across all target browsers
+- [ ] 41. Test browser compatibility across all target browsers
   - Test Chrome (latest 2 versions): video, animations, forms
   - Test Firefox (latest 2 versions): video, animations, forms
   - Test Safari (latest 2 versions): video, animations, forms
@@ -382,7 +382,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Document any browser-specific issues and workarounds
   - _Requirements: 15.1-15.5_
 
-- [~] 42. Verify animation performance (60 FPS desktop, 30+ FPS mobile)
+- [ ] 42. Verify animation performance (60 FPS desktop, 30+ FPS mobile)
   - Use Chrome DevTools Performance tab to record animations
   - Verify GPU acceleration with `transform` and `opacity` properties
   - Check frame rate stays above 60 FPS on desktop
@@ -390,14 +390,14 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Identify and optimize any janky animations
   - _Requirements: 12.5, 14.5_
 
-- [~] 43. Test `prefers-reduced-motion` accessibility feature
+- [ ] 43. Test `prefers-reduced-motion` accessibility feature
   - Enable `prefers-reduced-motion: reduce` in OS settings
   - Verify all animations are disabled (instant, no delays)
   - Verify content is still accessible without animations
   - Test form submission works with reduced motion
   - _Requirements: 12.6, 17.4_
 
-- [~] 44. Final integration test - Simulate complete user journey
+- [ ] 44. Final integration test - Simulate complete user journey
   - User arrives on homepage → sees video entry experience
   - Video plays for full duration → transitions to homepage
   - User scrolls through all 8 sections → animations trigger on scroll
@@ -407,7 +407,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Verify Supabase has new lead record
   - _Requirements: All_
 
-- [~] 45. Final checkpoint - Complete feature verification
+- [ ] 45. Final checkpoint - Complete feature verification
   - All visual sections render correctly
   - All animations smooth and performant
   - All form functionality working
@@ -417,7 +417,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Performance targets met (< 3s load, 80+ Lighthouse desktop)
   - Ask user for final approval before deployment preparation
 
-- [~] 46. Prepare deployment configuration
+- [ ] 46. Prepare deployment configuration
   - Create production environment variables (`.env.production`)
   - Configure Supabase for production (security rules, constraints)
   - Set up error logging/monitoring service (Sentry or console.error)
@@ -425,7 +425,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Document form submission error handling and support process
   - _Requirements: 11.1, 18.1_
 
-- [~] 47. Document API integration and form submission flow
+- [ ] 47. Document API integration and form submission flow
   - Write API documentation for Supabase `leads` table schema
   - Document lead submission endpoint and request/response format
   - Document error codes and handling strategies
@@ -433,7 +433,7 @@ The implementation follows a layered approach: infrastructure setup → video ex
   - Document how to access submitted leads in Supabase dashboard
   - _Requirements: 11.1, 11.2_
 
-- [~] 48. Create deployment and rollback procedures
+- [ ] 48. Create deployment and rollback procedures
   - Document step-by-step deployment process
   - Create automated deployment script (if applicable)
   - Document how to verify deployment succeeded

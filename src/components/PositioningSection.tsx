@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Container } from '../sections/Section'
 
 const services = ['Design', 'Development', 'Maintenance']
@@ -67,7 +67,7 @@ export default function PositioningSection() {
           {services.map((s, i) => (
             <span
               key={s}
-              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-white/15 backdrop-blur-sm"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-[#a87242]/40 backdrop-blur-sm"
               style={{
                 background: i === 0
                   ? 'rgba(255,255,255,0.10)'
@@ -80,16 +80,15 @@ export default function PositioningSection() {
 
           <motion.a
             href="#growth-ecosystem"
-            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="ml-auto inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
+            className="ml-auto inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm md:text-base text-white border border-[#a87242]/40 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors"
           >
             <span className="text-[#d4a576]">↗</span> All services
           </motion.a>
         </motion.div>
 
         {/* Divider (matches pills visibility) */}
-        <div className="hidden md:block border-t border-white/10 mb-8 md:mb-10" />
+        <div className="hidden md:block border-t border-[#a87242]/30 mb-8 md:mb-10" />
 
         {/* Tagline + CTA */}
         <motion.div
@@ -103,10 +102,9 @@ export default function PositioningSection() {
             <span className="font-serif-italic text-[#d4a576]">make an impact</span>
           </p>
           <motion.button
-            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-6 sm:px-7 py-3 rounded-full text-sm md:text-base text-white border border-white/25 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/50 transition-colors"
+            className="px-6 sm:px-7 py-3 rounded-full text-sm md:text-base text-white border border-[#a87242]/50 bg-white/5 backdrop-blur-sm hover:bg-[#a87242]/20 hover:border-[#a87242]/50 transition-colors"
           >
             Book a call
           </motion.button>
@@ -122,8 +120,7 @@ export default function PositioningSection() {
           {previewCards.map((card) => (
             <motion.div
               key={card.title}
-              whileHover={{ y: -6 }}
-              className="relative rounded-2xl border border-white/10 overflow-hidden h-48 md:h-64 cursor-pointer group bg-[#1a120c]"
+              className="relative rounded-2xl border border-[#a87242]/30 card-hover overflow-hidden h-48 md:h-64 cursor-pointer group bg-[#1a120c]"
             >
               <img
                 src={card.image}
@@ -139,7 +136,7 @@ export default function PositioningSection() {
                 <span className="text-xs uppercase tracking-widest text-white/75 mb-1">{card.tag}</span>
                 <span className="text-2xl md:text-3xl font-bold text-white">{card.title}</span>
               </div>
-              <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-10">↗</div>
+              <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-[#a87242]/60 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-10">↗</div>
             </motion.div>
           ))}
         </motion.div>

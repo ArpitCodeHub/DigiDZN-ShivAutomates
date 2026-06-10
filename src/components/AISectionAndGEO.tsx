@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const cards = [
@@ -60,8 +60,13 @@ export default function AISectionAndGEO() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -6 }}
-              className="rounded-2xl border border-white/8 bg-white/3 p-8 group"
+              
+              className="rounded-2xl border border-[#a87242]/20 card-hover p-8 group transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
+              style={{
+                background: 'rgba(255,255,255,0.03)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+              }}
             >
               {/* Icon */}
               <div
@@ -71,7 +76,7 @@ export default function AISectionAndGEO() {
                 {card.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-colors">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
                 {card.title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed mb-6">{card.desc}</p>
@@ -95,7 +100,7 @@ export default function AISectionAndGEO() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
           className="rounded-2xl p-8 md:p-12 border border-[#a87242]/20 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, rgba(168,114,66,0.10), rgba(200,147,104,0.08))' }}
+          style={{ background: 'rgba(168,114,66,0.06)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
         >
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#a87242]/8 to-[#c89368]/5" />
           <div className="relative z-10 md:flex items-center justify-between gap-8">
@@ -108,9 +113,8 @@ export default function AISectionAndGEO() {
               </p>
             </div>
             <motion.button
-              whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="flex-shrink-0 px-7 py-3 rounded-full text-sm font-semibold text-white border border-white/25 bg-white/5 hover:bg-[#a87242]/25 hover:border-[#a87242]/50 transition-colors"
+              className="flex-shrink-0 px-7 py-3 rounded-full text-sm font-semibold text-white border border-[#a87242]/50 bg-white/5 hover:bg-[#a87242]/25 hover:border-[#a87242]/50 transition-[color,border-color,background-color,opacity] duration-200 ease-out"
               onClick={() => document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get Started

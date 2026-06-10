@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
@@ -74,9 +74,10 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ y: -6 }}
+      
       onClick={() => onClick(project)}
-      className="group relative rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm cursor-pointer overflow-hidden"
+      className="rounded-2xl border border-[#a87242]/20 card-hover overflow-hidden group relative cursor-pointer transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
+      style={{ background: 'rgba(26,18,12,0.45)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
     >
       {/* Image header */}
       <div className="relative h-52 overflow-hidden bg-[#1a120c]">
@@ -104,7 +105,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
 
       <div className="p-7">
         {/* Title */}
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-colors">
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
           {project.title}
         </h3>
 
@@ -113,12 +114,12 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
         </p>
 
         {/* Metric */}
-        <div className="flex items-end gap-3 pt-5 border-t border-white/8">
+        <div className="flex items-end gap-3 pt-5 border-t border-[#a87242]/20">
           <span className="text-4xl font-bold" style={{ color: project.color }}>
             {project.metric}
           </span>
           <span className="text-sm text-white/40 mb-1">{project.metricLabel}</span>
-          <span className="ml-auto text-white/30 group-hover:text-[#c89368] transition-colors text-sm">
+          <span className="ml-auto text-white/30 group-hover:text-[#c89368] transition-[color,border-color,background-color,opacity] duration-200 ease-out text-sm">
             View case study →
           </span>
         </div>
@@ -137,7 +138,8 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
       onClick={onClose}
     >
       <motion.div
-        className="bg-[#110d0a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto"
+        className="rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-[#a87242]/30"
+        style={{ background: 'rgba(17,13,10,0.9)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -164,7 +166,7 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
               </span>
               <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
             </div>
-            <button onClick={onClose} className="text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5 ml-4">
+            <button onClick={onClose} className="text-white/40 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out p-2 rounded-lg hover:bg-white/5 ml-4">
               ✕
             </button>
           </div>

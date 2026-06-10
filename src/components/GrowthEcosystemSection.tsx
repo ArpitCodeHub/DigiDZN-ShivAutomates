@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
@@ -69,12 +69,15 @@ export default function GrowthEcosystemSection() {
               tabIndex={0}
               role="button"
               aria-label={`${node.label.replace('\n', ' ')} – ${node.description}`}
-              className="relative rounded-2xl border border-white/8 bg-white/3 cursor-pointer transition-all duration-300 group overflow-hidden"
+              className="relative rounded-2xl border border-[#a87242]/20 card-hover cursor-pointer transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out group overflow-hidden"
               style={{
+                background: 'rgba(255,255,255,0.03)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
                 borderColor: hoveredId === node.id ? `${node.color}60` : undefined,
                 boxShadow: hoveredId === node.id ? `0 0 30px ${node.color}25` : undefined,
               }}
-              whileHover={{ y: -4, scale: 1.02 }}
+              
             >
               {/* Image strip */}
               <div className="relative h-20 sm:h-24 overflow-hidden bg-[#1a120c]">
@@ -133,7 +136,9 @@ export default function GrowthEcosystemSection() {
               className="rounded-2xl border p-6 md:p-8"
               style={{
                 borderColor: `${nodes.find(n => n.id === hoveredId)?.color}30`,
-                background: `${nodes.find(n => n.id === hoveredId)?.color}08`,
+                background: `rgba(255,255,255,0.03)`,
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
               }}
             >
               {(() => {

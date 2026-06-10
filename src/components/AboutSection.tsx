@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const collage = [
@@ -43,7 +43,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0, rotate: p.rotate }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="absolute w-[60%] sm:w-[55%] md:w-[320px] aspect-[3/2] rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-[#1a120c]"
+                className="absolute w-[60%] sm:w-[55%] md:w-[320px] aspect-[3/2] rounded-xl border border-[#a87242]/30 shadow-2xl overflow-hidden bg-[#1a120c]"
                 style={{ top: p.top, left: p.left, zIndex: p.z }}
               >
                 <img
@@ -162,7 +162,7 @@ export default function AboutSection() {
               whileHover={{ scale: 1.04, backgroundColor: 'rgba(168,114,66,0.15)' }}
               whileTap={{ scale: 0.97 }}
               onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 sm:px-7 py-3 rounded-full text-sm md:text-base text-white border border-white/25 bg-white/5 backdrop-blur-sm transition-colors"
+              className="px-6 sm:px-7 py-3 rounded-full text-sm md:text-base text-white border border-[#a87242]/50 bg-white/5 backdrop-blur-sm transition-colors"
             >
               More about agency
             </motion.button>

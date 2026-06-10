@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
 const items = [
@@ -39,8 +39,9 @@ export default function ContentCreativeSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className={`group rounded-2xl border border-white/8 bg-white/3 overflow-hidden cursor-pointer ${item.span}`}
+              
+              className={`group rounded-2xl border border-[#a87242]/20 overflow-hidden cursor-pointer ${item.span} transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out`}
+              style={{ background: 'rgba(255,255,255,0.025)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
             >
               {/* Image */}
               <div
@@ -56,9 +57,9 @@ export default function ContentCreativeSection() {
                 <div className="absolute inset-0 mix-blend-multiply opacity-35"
                   style={{ background: `linear-gradient(135deg, #1a120c, ${item.color})` }} />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
                   style={{ background: 'rgba(10,8,7,0.55)', backdropFilter: 'blur(2px)' }}>
-                  <span className="text-white font-semibold text-sm border border-white/30 px-4 py-2 rounded-full bg-white/10">View Project →</span>
+                  <span className="text-white font-semibold text-sm border border-[#a87242]/50 px-4 py-2 rounded-full bg-white/10">View Project →</span>
                 </div>
               </div>
 
@@ -69,7 +70,7 @@ export default function ContentCreativeSection() {
                 >
                   {item.type}
                 </span>
-                <h3 className="font-bold text-white mb-2 group-hover:text-[#d4a576] transition-colors">
+                <h3 className="font-bold text-white mb-2 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
                   {item.title}
                 </h3>
                 <p className="text-sm text-white/45">{item.desc}</p>

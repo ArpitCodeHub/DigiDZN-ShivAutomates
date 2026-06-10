@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
@@ -44,9 +44,13 @@ export default function TeamSection() {
               viewport={{ once: true }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className="relative rounded-2xl border border-white/8 bg-white/3 p-6 overflow-hidden cursor-default"
+              className="relative rounded-2xl border border-[#a87242]/20 card-hover p-6 overflow-hidden cursor-default transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
               style={{
+                background: 'rgba(255,255,255,0.03)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
                 borderColor: hovered === i ? `${member.color}40` : undefined,
+                boxShadow: hovered === i ? `0 0 24px ${member.color}18` : undefined,
               }}
             >
               {/* Avatar */}

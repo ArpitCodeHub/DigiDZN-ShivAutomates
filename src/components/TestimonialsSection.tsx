@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
@@ -37,10 +37,10 @@ export default function TestimonialsSection() {
               <button
                 key={item.id}
                 onClick={() => setActive(i)}
-                className={`flex items-center gap-3 lg:gap-4 p-3 lg:p-4 rounded-xl text-left w-full transition-all duration-300 border ${
+                className={`flex items-center gap-3 lg:gap-4 p-3 lg:p-4 rounded-xl text-left w-full transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out border ${
                   active === i
-                    ? 'border-white/20 bg-white/8'
-                    : 'border-transparent bg-transparent hover:bg-white/4'
+                    ? 'border-[#a87242]/40 bg-white/[0.06] backdrop-blur-sm'
+                    : 'border-transparent bg-transparent hover:bg-white/[0.04]'
                 }`}
               >
                 <div
@@ -66,7 +66,8 @@ export default function TestimonialsSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="rounded-2xl border border-white/8 bg-white/3 p-6 md:p-8 lg:p-10 h-full"
+                className="rounded-2xl border border-[#a87242]/20 card-hover p-6 md:p-8 lg:p-10 h-full"
+                style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-5 md:mb-6">
@@ -79,7 +80,7 @@ export default function TestimonialsSection() {
                   "{t.quote}"
                 </blockquote>
 
-                <div className="flex items-center gap-4 pt-5 md:pt-6 border-t border-white/8">
+                <div className="flex items-center gap-4 pt-5 md:pt-6 border-t border-[#a87242]/20">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center font-bold"
                     style={{ background: `${t.color}25`, color: t.color }}
