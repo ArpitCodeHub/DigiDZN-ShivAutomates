@@ -211,81 +211,21 @@ const ecosystemConnections: Record<string, string[]> = {
 }
 
 const processSteps = [
-  {
-    number: '01',
-    label: 'Discover',
-    description: 'We dig into your business, your market, and your customers. No assumptions — just research.',
-    icon: '🔎',
-  },
-  {
-    number: '02',
-    label: 'Strategise',
-    description: 'We map out exactly which services, in what sequence, will move the needle fastest for your goals.',
-    icon: '🗺',
-  },
-  {
-    number: '03',
-    label: 'Create',
-    description: 'Our full in-house team executes — design, copy, code, ads — to the highest standard.',
-    icon: '⚡',
-  },
-  {
-    number: '04',
-    label: 'Launch',
-    description: 'We ship with precision. Every channel activated, every tracking pixel fired, every integration verified.',
-    icon: '🚀',
-  },
-  {
-    number: '05',
-    label: 'Optimise',
-    description: 'Data flows in. We iterate relentlessly — cutting what underperforms, doubling what works.',
-    icon: '📊',
-  },
-  {
-    number: '06',
-    label: 'Scale',
-    description: 'Once the system is proven, we scale. More budget, more channels, more growth.',
-    icon: '📈',
-  },
+  { number: '01', label: 'Discover',   description: 'We dig into your business, your market, and your customers. No assumptions — just research.' },
+  { number: '02', label: 'Strategise', description: 'We map out exactly which services, in what sequence, will move the needle fastest for your goals.' },
+  { number: '03', label: 'Create',     description: 'Our full in-house team executes — design, copy, code, ads — to the highest standard.' },
+  { number: '04', label: 'Launch',     description: 'We ship with precision. Every channel activated, every tracking pixel fired, every integration verified.' },
+  { number: '05', label: 'Optimise',   description: 'Data flows in. We iterate relentlessly — cutting what underperforms, doubling what works.' },
+  { number: '06', label: 'Scale',      description: 'Once the system is proven, we scale. More budget, more channels, more growth.' },
 ]
 
 const whyPoints = [
-  {
-    label: 'Full-funnel execution',
-    body: 'From awareness to conversion to retention — we cover every stage in-house, eliminating the gaps that kill growth when you stitch together multiple agencies.',
-    icon: '🔄',
-    color: '#a87242',
-  },
-  {
-    label: 'In-house creative production',
-    body: 'Most agencies outsource creative. We do not. Our designers, videographers, and copywriters work alongside your strategists — faster briefs, better output, lower cost.',
-    icon: '🎬',
-    color: '#c89368',
-  },
-  {
-    label: 'SEO + GEO expertise',
-    body: 'Very few agencies genuinely understand both organic search and location-based marketing. We have built processes that combine them for compounding results.',
-    icon: '🔍',
-    color: '#d4a576',
-  },
-  {
-    label: 'Data-first decisions',
-    body: 'Every recommendation we make is grounded in data — not trends, gut feelings, or what worked for a different client in a different industry.',
-    icon: '📊',
-    color: '#8b5e3c',
-  },
-  {
-    label: 'Systems thinking',
-    body: 'We build interconnected systems, not isolated campaigns. Each service amplifies the others, creating compounding returns that standalone tactics can never match.',
-    icon: '⚙️',
-    color: '#a87242',
-  },
-  {
-    label: 'Website development capability',
-    body: 'Most marketing agencies cannot touch your website. We design and build them — so strategy and execution are never in conflict.',
-    icon: '🌐',
-    color: '#c89368',
-  },
+  { label: 'Full-funnel execution',         body: 'From awareness to conversion to retention — we cover every stage in-house, eliminating the gaps that kill growth when you stitch together multiple agencies.', color: '#a87242' },
+  { label: 'In-house creative production',  body: 'Most agencies outsource creative. We do not. Our designers, videographers, and copywriters work alongside your strategists — faster briefs, better output, lower cost.', color: '#c89368' },
+  { label: 'SEO + GEO expertise',           body: 'Very few agencies genuinely understand both organic search and location-based marketing. We have built processes that combine them for compounding results.', color: '#d4a576' },
+  { label: 'Data-first decisions',          body: 'Every recommendation we make is grounded in data — not trends, gut feelings, or what worked for a different client in a different industry.', color: '#8b5e3c' },
+  { label: 'Systems thinking',              body: 'We build interconnected systems, not isolated campaigns. Each service amplifies the others, creating compounding returns that standalone tactics can never match.', color: '#a87242' },
+  { label: 'Website development capability',body: 'Most marketing agencies cannot touch your website. We design and build them — so strategy and execution are never in conflict.', color: '#c89368' },
 ]
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -326,7 +266,7 @@ function ServiceEcosystemMap({ onServiceClick }: { onServiceClick: (id: string) 
           
         >
           {/* Image strip */}
-          <div className="relative h-20 sm:h-24 overflow-hidden bg-[#1a120c]">
+          <div className="relative h-28 sm:h-32 overflow-hidden bg-[#1a120c]">
             <img
               src={svc.image}
               alt={svc.headline}
@@ -336,21 +276,29 @@ function ServiceEcosystemMap({ onServiceClick }: { onServiceClick: (id: string) 
             />
             <div
               className="absolute inset-0 mix-blend-multiply"
-              style={{ background: `linear-gradient(135deg, rgba(26,18,12,0.55), ${svc.color}aa)` }}
+              style={{ background: `linear-gradient(135deg, rgba(26,18,12,0.6), ${svc.color}99)` }}
             />
-            <div className="absolute inset-x-0 bottom-0 h-10"
-              style={{ background: 'linear-gradient(180deg, transparent, rgba(10,8,7,0.95))' }} />
+            {/* Bottom gradient — deeper so text is readable */}
+            <div className="absolute inset-x-0 bottom-0 h-16"
+              style={{ background: 'linear-gradient(180deg, transparent, rgba(10,8,7,1))' }} />
           </div>
 
-          <div className="p-4 sm:p-5 -mt-6 relative">
+          <div className="px-4 sm:px-5 pt-3 pb-5 relative">
+            {/* Colour accent line */}
             <div
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center text-base sm:text-lg mb-3 border-2 border-[#0a0807]"
+              className="w-6 h-0.5 mb-3 rounded-full"
               style={{ background: svc.color }}
-            >
-              {svc.icon}
-            </div>
-            <p className="font-bold text-white text-sm sm:text-base leading-tight mb-1">{svc.slug}</p>
-            <p className="text-xs text-white/40 leading-snug">{svc.tagline}</p>
+            />
+            {/* Service name — prominent editorial treatment */}
+            <p className="leading-none mb-1.5">
+              <span
+                className="font-black text-white uppercase tracking-wide"
+                style={{ fontSize: 'clamp(13px, 2.2vw, 17px)', letterSpacing: '0.04em' }}
+              >
+                {svc.slug}
+              </span>
+            </p>
+            <p className="text-xs text-white/40 leading-snug font-serif-italic" style={{ color: `${svc.color}cc` }}>{svc.tagline}</p>
           </div>
 
           {/* "connected" dot */}
@@ -386,15 +334,14 @@ function ServiceDeepDive({ svc, index }: { svc: typeof services[0]; index: numbe
         {/* Label */}
         <div className="flex items-center gap-3 mb-6">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
-            style={{ background: `${svc.color}25` }}
+            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border border-[#a87242]/20"
+            style={{ background: `${svc.color}20` }}
           >
-            {svc.icon}
+            <span className="font-black text-xs tracking-widest" style={{ color: svc.color }}>
+              {String(index + 1).padStart(2, '0')}
+            </span>
           </div>
-          <span
-            className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: svc.color }}
-          >
+          <span className="text-xs font-black uppercase tracking-widest" style={{ color: svc.color }}>
             {svc.slug}
           </span>
         </div>
@@ -757,15 +704,15 @@ export default function ServicesPage({ onBookCall, onViewWork }: ServicesPagePro
                   {step.number}
                 </span>
 
-                {/* Icon */}
+                {/* Step number badge */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5 border border-[#a87242]/30"
-                  style={{ background: 'rgba(168,114,66,0.12)' }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-[#a87242]/30"
+                  style={{ background: 'rgba(168,114,66,0.10)' }}
                 >
-                  {step.icon}
+                  <span className="font-black text-xs tracking-widest" style={{ color: '#a87242' }}>{step.number}</span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
+                <h3 className="text-xl sm:text-2xl font-black text-white mb-3 tracking-wide uppercase group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
                   {step.label}
                 </h3>
                 <p className="text-sm sm:text-base text-white/50 leading-relaxed">{step.description}</p>
@@ -815,12 +762,17 @@ export default function ServicesPage({ onBookCall, onViewWork }: ServicesPagePro
               style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5"
-                  style={{ background: `${pt.color}20` }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-[#a87242]/20"
+                  style={{ background: `${pt.color}15` }}
                 >
-                  {pt.icon}
+                  <span
+                    className="font-black text-xs tracking-widest"
+                    style={{ color: pt.color }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                 </div>
-                <h3 className="font-bold text-white text-base sm:text-lg mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
+                <h3 className="font-black text-white text-base sm:text-lg mb-3 tracking-wide uppercase group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
                   {pt.label}
                 </h3>
                 <p className="text-sm text-white/50 leading-relaxed">{pt.body}</p>

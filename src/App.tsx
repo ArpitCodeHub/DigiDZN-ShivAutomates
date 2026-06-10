@@ -35,6 +35,7 @@ export default function App() {
       {!isVideoComplete && (
         <VideoEntry
           videoSrc="/videos/final-digidzn.mp4"
+          videoSrcMobile="/videos/final-digidzn-vertical.mp4"
           onVideoComplete={handleVideoComplete}
         />
       )}

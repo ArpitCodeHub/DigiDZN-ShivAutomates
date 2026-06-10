@@ -1,23 +1,36 @@
 ﻿import { motion } from 'framer-motion'
+import { ReactNode } from 'react'
 import Section, { Container } from '../sections/Section'
 
 const cards = [
   {
-    icon: '⚡',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    ),
     title: 'AI-Powered Insights',
     desc: 'ML algorithms analyze behavior patterns to predict what captures attention and drives conversions before you spend a dollar.',
     outcomes: ['Predictive Targeting', 'Smart Personalization', 'Continuous Optimization'],
     color: '#a87242',
   },
   {
-    icon: '📍',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+      </svg>
+    ),
     title: 'Geo-Location Marketing',
     desc: 'Reach customers at the exact moment and location where purchasing decisions happen. Right place, right message, every time.',
     outcomes: ['Hyper-Local Targeting', 'Higher Conversions', 'Measurable ROI'],
     color: '#c89368',
   },
   {
-    icon: '🔄',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      </svg>
+    ),
     title: 'Real-Time Adaptation',
     desc: 'Our systems continuously learn and adapt campaigns in real-time, keeping your strategy ahead of market shifts automatically.',
     outcomes: ['Dynamic Optimization', 'Market Responsiveness', 'Competitive Advantage'],
@@ -70,13 +83,13 @@ export default function AISectionAndGEO() {
             >
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-6"
-                style={{ background: `${card.color}20` }}
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+                style={{ background: `${card.color}20`, color: card.color }}
               >
                 {card.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
+              <h3 className="text-xl font-black text-white mb-3 tracking-wide uppercase group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
                 {card.title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed mb-6">{card.desc}</p>
