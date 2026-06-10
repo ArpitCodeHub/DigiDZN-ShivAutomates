@@ -34,7 +34,7 @@ export default function App() {
       {/* Video Entry Experience */}
       {!isVideoComplete && (
         <VideoEntry
-          videoSrc="/videos/digi-WOwatermark.mp4"
+          videoSrc="/videos/final-digidzn.mp4"
           onVideoComplete={handleVideoComplete}
         />
       )}
