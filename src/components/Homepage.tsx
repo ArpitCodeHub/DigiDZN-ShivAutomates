@@ -15,9 +15,10 @@ interface HomepageProps {
   leadFormOpen: boolean
   setLeadFormOpen: (v: boolean) => void
   onNavigateToServices?: () => void
+  onNavigateToBlogs?: () => void
 }
 
-function Navbar({ onContactClick, onNavigateToServices }: { onContactClick: () => void; onNavigateToServices?: () => void }) {
+function Navbar({ onContactClick, onNavigateToServices, onNavigateToBlogs }: { onContactClick: () => void; onNavigateToServices?: () => void; onNavigateToBlogs?: () => void }) {
   const [open, setOpen] = useState(false)
 
   // Lock body scroll when mobile menu is open
@@ -55,6 +56,12 @@ function Navbar({ onContactClick, onNavigateToServices }: { onContactClick: () =
                 className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out"
               >
                 Services
+              </button>
+              <button
+                onClick={onNavigateToBlogs}
+                className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out"
+              >
+                Blogs
               </button>
               <a href="#testimonials" className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out">Testimonials</a>
             </div>
@@ -164,6 +171,21 @@ function Navbar({ onContactClick, onNavigateToServices }: { onContactClick: () =
                       <span className="text-white/30 text-xl">↗</span>
                     </button>
                   </motion.li>
+
+                  {/* Blogs → navigates to Blogs page */}
+                  <motion.li variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}>
+                    <button
+                      onClick={() => {
+                        setOpen(false)
+                        document.body.style.overflow = ''
+                        if (onNavigateToBlogs) onNavigateToBlogs()
+                      }}
+                      className="w-full flex items-center justify-between text-left py-4 border-b border-[#a87242]/20 text-2xl font-medium text-white hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out"
+                    >
+                      Blogs
+                      <span className="text-white/30 text-xl">↗</span>
+                    </button>
+                  </motion.li>
                 </ul>
 
                 {/* CTA */}
@@ -245,10 +267,10 @@ function Footer() {
   )
 }
 
-export default function Homepage({ leadFormOpen, setLeadFormOpen, onNavigateToServices }: HomepageProps) {
+export default function Homepage({ leadFormOpen, setLeadFormOpen, onNavigateToServices, onNavigateToBlogs }: HomepageProps) {
   return (
     <div className="homepage">
-      <Navbar onContactClick={() => setLeadFormOpen(true)} onNavigateToServices={onNavigateToServices} />
+      <Navbar onContactClick={() => setLeadFormOpen(true)} onNavigateToServices={onNavigateToServices} onNavigateToBlogs={onNavigateToBlogs} />
       <PositioningSection />
       <AboutSection />
       <FeaturedWorkSection />
