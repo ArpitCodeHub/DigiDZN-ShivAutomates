@@ -187,7 +187,7 @@ function BlogCard({ blog, index, featured = false }: { blog: BlogPost; index: nu
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, delay: (index % 9) * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       className={`relative rounded-2xl border border-[#a87242]/20 card-hover overflow-hidden block group transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out ${featured ? 'md:col-span-2 md:row-span-2' : ''}`}
       style={{
         background: 'rgba(255,255,255,0.03)',
@@ -307,8 +307,15 @@ export default function BlogsPage({ onBookCall }: BlogsPageProps) {
   const [activeCategory, setActiveCategory] = useState<'All' | BlogCategory>('All')
 
   const filteredBlogs = useMemo(() => {
-    if (activeCategory === 'All') return blogs
-    return blogs.filter(b => b.category === activeCategory)
+    const list = activeCategory === 'All' ? blogs : blogs.filter(b => b.category === activeCategory)
+    // Stable sort: cards with thumbnails first, cards without at the bottom.
+    // Original order is preserved within each group.
+    return [...list].sort((a, b) => {
+      const aHas = !!localThumbnail(a.url)
+      const bHas = !!localThumbnail(b.url)
+      if (aHas === bHas) return 0
+      return aHas ? -1 : 1
+    })
   }, [activeCategory])
 
   const featured = filteredBlogs[0]
@@ -425,7 +432,7 @@ export default function BlogsPage({ onBookCall }: BlogsPageProps) {
       </Section>
 
       {/* ── Blog grid ─────────────────────────────────────────────────────── */}
-      <Section id="blogs-grid" className="py-16 md:py-24 bg-[#0a0807]">
+      <section id="blogs-grid" className="w-full py-16 md:py-24 bg-[#0a0807]">
         <Container maxWidth="xl">
           {filteredBlogs.length === 0 ? (
             <p className="text-center text-white/40 py-20">No articles in this category yet.</p>
@@ -441,7 +448,7 @@ export default function BlogsPage({ onBookCall }: BlogsPageProps) {
             </div>
           )}
         </Container>
-      </Section>
+      </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section className="py-24 md:py-36 bg-[#0a0807] relative overflow-hidden">
