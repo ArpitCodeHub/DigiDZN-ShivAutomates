@@ -2,7 +2,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import PositioningSection from './PositioningSection'
 import AboutSection from './AboutSection'
-import FeaturedWorkSection from './FeaturedWorkSection'
 import GrowthEcosystemSection from './GrowthEcosystemSection'
 import AISectionAndGEO from './AISectionAndGEO'
 import ContentCreativeSection from './ContentCreativeSection'
@@ -50,7 +49,7 @@ function Navbar({ onContactClick, onNavigateToServices, onNavigateToBlogs }: { o
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
               <a href="#about" className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out">Agency</a>
-              <a href="#featured-work" className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out">Our Works</a>
+              <a href="#content-creative" className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out">Our Works</a>
               <button
                 onClick={onNavigateToServices}
                 className="text-sm text-white/70 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out"
@@ -140,7 +139,7 @@ function Navbar({ onContactClick, onNavigateToServices, onNavigateToBlogs }: { o
                 <ul className="space-y-1 mb-8">
                   {[
                     { label: 'Agency',       action: () => closeAndScroll('#about') },
-                    { label: 'Our Works',    action: () => closeAndScroll('#featured-work') },
+                    { label: 'Our Works',    action: () => closeAndScroll('#content-creative') },
                     { label: 'Testimonials', action: () => closeAndScroll('#testimonials') },
                   ].map(l => (
                     <motion.li
@@ -273,10 +272,9 @@ export default function Homepage({ leadFormOpen, setLeadFormOpen, onNavigateToSe
       <Navbar onContactClick={() => setLeadFormOpen(true)} onNavigateToServices={onNavigateToServices} onNavigateToBlogs={onNavigateToBlogs} />
       <PositioningSection />
       <AboutSection />
-      <FeaturedWorkSection />
+      <ContentCreativeSection />
       <GrowthEcosystemSection />
       <AISectionAndGEO />
-      <ContentCreativeSection />
       <TestimonialsSection />
       <TeamSection />
       <FinalCTA onOpen={() => setLeadFormOpen(true)} />
