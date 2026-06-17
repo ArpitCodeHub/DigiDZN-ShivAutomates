@@ -25,7 +25,7 @@ const services = [
       'Google Business Profile Optimization',
     ],
     framework: 'Discover → Optimize → Build Authority → AI Visibility → Scale',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Interior Design & Architecture Studio',
@@ -61,7 +61,7 @@ const services = [
       'Content Repurposing',
     ],
     framework: 'Research → Plan → Create → Distribute → Optimize',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Fitness & Wellness Brand',
@@ -97,7 +97,7 @@ const services = [
       'Campaign Analytics',
     ],
     framework: 'Discover → Match → Execute → Amplify → Measure',
-    image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Apparel Brand',
@@ -133,7 +133,7 @@ const services = [
       'Marketing Collateral Design',
     ],
     framework: 'Discover → Position → Design → Launch → Evolve',
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Interior Design & Architecture Studio',
@@ -169,7 +169,7 @@ const services = [
       'Creative Testing Assets',
     ],
     framework: 'Concept → Create → Produce → Distribute → Optimize',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Fashion & Apparel E-Commerce Brand',
@@ -205,7 +205,7 @@ const services = [
       'AI-Powered Content Workflows',
     ],
     framework: 'Research → Create → Engage → Amplify → Grow',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1535303311164-664fc9ec6532?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Interior Design & Architecture Studio',
@@ -241,7 +241,7 @@ const services = [
       'B2B SaaS Lead Generation',
     ],
     framework: 'Research → Launch → Optimize → Scale → Grow',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Fashion & Apparel E-Commerce Brand',
@@ -277,7 +277,7 @@ const services = [
       'Remarketing & Abandoned Cart Recovery',
     ],
     framework: 'Audit → Build → Launch → Optimize → Retain',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=2400&q=85&auto=format&fit=crop',
     relatedWork: [
       {
         title: 'Fashion & Apparel E-Commerce Brand',
