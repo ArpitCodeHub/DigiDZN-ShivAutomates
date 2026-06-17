@@ -1,5 +1,6 @@
 ﻿import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { submitLead } from '../utils/leads'
 
 interface LeadData { name: string; email: string; company: string; message: string }
 interface LeadFormModalProps { onClose: () => void }
@@ -7,6 +8,7 @@ interface LeadFormModalProps { onClose: () => void }
 export default function LeadFormModal({ onClose }: LeadFormModalProps) {
   const [data, setData] = useState<LeadData>({ name: '', email: '', company: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState<string>('')
   const [errors, setErrors] = useState<Partial<LeadData>>({})
 
   const validate = () => {
@@ -21,11 +23,18 @@ export default function LeadFormModal({ onClose }: LeadFormModalProps) {
     const e = validate()
     if (Object.keys(e).length) { setErrors(e); return }
     setStatus('loading')
-    try {
-      await new Promise(r => setTimeout(r, 1200))
+    setErrorMessage('')
+    const result = await submitLead({
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      message: data.message,
+    })
+    if (result.ok) {
       setStatus('success')
       setTimeout(onClose, 2000)
-    } catch {
+    } else {
+      setErrorMessage(result.error ?? 'Something went wrong. Please try again.')
       setStatus('error')
     }
   }, [data, onClose])
@@ -125,7 +134,7 @@ export default function LeadFormModal({ onClose }: LeadFormModalProps) {
               </div>
 
               {status === 'error' && (
-                <p className="text-sm text-red-400 text-center">Something went wrong. Please try again.</p>
+                <p className="text-sm text-red-400 text-center">{errorMessage || 'Something went wrong. Please try again.'}</p>
               )}
             </form>
           )}
