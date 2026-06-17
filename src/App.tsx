@@ -6,11 +6,20 @@ import Homepage from './components/Homepage'
 import ServicesPage from './components/ServicesPage'
 import BlogsPage from './components/BlogsPage'
 import LeadFormModal from './components/LeadFormModal'
+import AdminPage from './components/admin/AdminPage'
 import { Container } from './sections/Section'
 
 export type PageView = 'home' | 'services' | 'blogs'
 
+// Detect admin route on initial load. /admin and /admin/* both render the admin page.
+const isAdminRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/admin')
+
 export default function App() {
+  // Admin route bypasses everything else — no video entry, no marketing chrome.
+  if (isAdminRoute) {
+    return <AdminPage />
+  }
+
   const [isVideoComplete, setIsVideoComplete] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [leadFormOpen, setLeadFormOpen] = useState(false)
