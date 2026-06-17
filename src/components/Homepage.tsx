@@ -256,8 +256,13 @@ function Footer() {
           <span className="text-base font-black text-white tracking-[0.2em]">DIGIDZN</span>
           <p className="text-xs sm:text-sm text-white/30 order-3 md:order-2">© 2026 DigiDZN. Engineering attention into growth.</p>
           <div className="flex gap-5 sm:gap-6 order-2 md:order-3">
-            {['Privacy', 'Terms', 'Contact'].map(l => (
-              <a key={l} href="#" className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-[color,border-color,background-color,opacity] duration-200 ease-out">{l}</a>
+            {[
+              { label: 'Privacy', href: '#' },
+              { label: 'Terms',   href: '#' },
+              { label: 'Contact', href: '#' },
+              { label: 'Admin',   href: '/admin' },
+            ].map(l => (
+              <a key={l.label} href={l.href} className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-[color,border-color,background-color,opacity] duration-200 ease-out">{l.label}</a>
             ))}
           </div>
         </div>
