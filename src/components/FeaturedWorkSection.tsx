@@ -2,125 +2,275 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import Section, { Container } from '../sections/Section'
 
-export interface Project {
-  id: number
-  title: string
-  tag: string
-  clientContext: string
-  challenge: string
-  approach: string
-  result: string
-  metric: string
-  metricLabel: string
-  color: string
-  image: string
+// ─── Case study type ────────────────────────────────────────────────────────
+
+interface Metric {
+  value: string
+  label: string
 }
 
-const PROJECTS: Project[] = [
+export interface CaseStudy {
+  id: string
+  title: string
+  industry: string
+  primaryService: string
+  summary: string
+  approach: string
+  services: string[]
+  metrics: Metric[]
+  highlight: Metric
+  color: string
+  image: string // path under /public/case-studies/
+}
+
+// ─── Real DigiDZN client work — clients anonymised by industry ──────────────
+
+const PROJECTS: CaseStudy[] = [
   {
-    id: 1,
-    title: 'E-Commerce Platform Growth',
-    tag: 'SEO + GEO',
-    clientContext: 'Fast-growing online retailer struggling with visibility',
-    challenge: 'Low organic search visibility and lack of local market penetration',
-    approach: 'Comprehensive SEO strategy combined with targeted local GEO marketing and content optimization',
-    result: '+250% organic traffic in 6 months',
-    metric: '250%', metricLabel: 'Traffic increase',
+    id: 'fashion-ecommerce-sales',
+    title: 'Fashion E-Commerce Brand',
+    industry: 'Fashion & Apparel',
+    primaryService: 'Performance + Social',
+    summary:
+      'Social media and performance marketing engine built to drive sales at scale and convert traffic into real revenue.',
+    approach:
+      'A fashion e-commerce brand leveraged our social media and performance marketing expertise to generate revenue, drive website traffic, and build a digital presence that continues to attract and convert customers.',
+    services: ['Social Media Marketing', 'Performance Marketing', 'Creative Strategy', 'Meta Ads'],
+    metrics: [
+      { value: '₹57.48L+', label: 'order value' },
+      { value: '340K+', label: 'website visits' },
+      { value: '5,701', label: 'add to carts' },
+      { value: '₹5.54L', label: 'ad spend' },
+    ],
+    highlight: { value: '₹57.48L+', label: 'in sales generated' },
     color: '#a87242',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop',
+    image: '/case-studies/fashion-ecommerce-sales.png',
   },
   {
-    id: 2,
-    title: 'B2B SaaS Lead Generation',
-    tag: 'Content + Paid',
-    clientContext: 'Enterprise software company expanding market reach',
-    challenge: 'Limited brand awareness and ineffective lead capture',
-    approach: 'Integrated content marketing, targeted paid campaigns, and conversion funnel optimization',
-    result: '+180% qualified leads, 3.2x ROI',
-    metric: '3.2×', metricLabel: 'Marketing ROI',
+    id: 'fitness-wellness-growth',
+    title: 'Fitness & Wellness Brand',
+    industry: 'Fitness & Wellness',
+    primaryService: 'Content + Social',
+    summary:
+      'Performance-driven content and visual storytelling that significantly expanded a fitness brand’s digital footprint.',
+    approach:
+      'Through a combination of strategic content, performance-driven social media campaigns, and engaging visual storytelling, we strengthened audience engagement and increased brand visibility across key platforms.',
+    services: ['Social Media Marketing', 'Content Marketing', 'Creative Strategy', 'Community Building'],
+    metrics: [
+      { value: '550K+', label: 'reach' },
+      { value: '401K+', label: 'page views' },
+      { value: '70K+', label: 'engagements' },
+      { value: '88K+', label: 'video views' },
+    ],
+    highlight: { value: '550K+', label: 'reach' },
     color: '#c89368',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80&auto=format&fit=crop',
+    image: '/case-studies/fitness-wellness-growth.png',
   },
   {
-    id: 3,
-    title: 'Local Service Expansion',
-    tag: 'Local SEO',
-    clientContext: 'Home services company operating in multiple markets',
-    challenge: 'Inconsistent performance across locations, poor local rankings',
-    approach: 'Multi-location SEO strategy with hyper-local GEO targeting and reputation management',
-    result: '+340% service inquiries from local search',
-    metric: '340%', metricLabel: 'Local inquiries',
+    id: 'interior-design-authority',
+    title: 'Interior Design & Architecture Studio',
+    industry: 'Interior Design & Architecture',
+    primaryService: 'Brand Building',
+    summary:
+      'Strategic content and creative storytelling that established a design studio as a recognised industry authority.',
+    approach:
+      'Through a combination of strategic content, creative storytelling, and audience-focused social media campaigns, we transformed social media into a powerful channel for visibility and engagement, showcasing projects, expertise, and brand values.',
+    services: ['Social Media Marketing', 'Creative Strategy', 'Brand Building', 'Content Marketing'],
+    metrics: [
+      { value: '208K+', label: 'impressions' },
+      { value: '201K+', label: 'reach' },
+      { value: '22K+', label: 'engagements' },
+      { value: '12.6K+', label: 'followers' },
+    ],
+    highlight: { value: '208K+', label: 'impressions' },
     color: '#d4a576',
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&q=80&auto=format&fit=crop',
+    image: '/case-studies/interior-design-authority.png',
   },
   {
-    id: 4,
-    title: 'Brand Repositioning Campaign',
-    tag: 'Branding',
-    clientContext: 'Established brand undergoing strategic pivot',
-    challenge: 'Need to communicate new positioning without alienating existing customers',
-    approach: 'Creative storytelling campaign and integrated marketing communications',
-    result: '+45% brand awareness increase',
-    metric: '45%', metricLabel: 'Brand awareness',
+    id: 'interior-design-leads',
+    title: 'Interior Design Brand',
+    industry: 'Interior Design & Architecture',
+    primaryService: 'Performance + Lead Gen',
+    summary:
+      'Performance campaigns that turned an interior design brand’s online presence into a high-performing acquisition channel.',
+    approach:
+      'A combination of strategic advertising, compelling visual content, and audience-focused campaigns transformed the brand’s online presence into a customer acquisition channel — focused on attracting high-intent prospects while maximising campaign efficiency and return on investment.',
+    services: ['Performance Marketing', 'Lead Generation', 'Social Media Marketing', 'Creative Strategy'],
+    metrics: [
+      { value: '355', label: 'qualified leads' },
+      { value: '211K+', label: 'reach' },
+      { value: '₹148.88', label: 'cost per lead' },
+    ],
+    highlight: { value: '355', label: 'qualified leads' },
     color: '#8b5e3c',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80&auto=format&fit=crop',
+    image: '/case-studies/interior-design-leads.png',
+  },
+  {
+    id: 'apparel-digital-presence',
+    title: 'Apparel Brand',
+    industry: 'Fashion & Apparel',
+    primaryService: 'Brand Growth',
+    summary:
+      'Strategic social media campaigns and engaging creative content that built a stronger apparel brand presence.',
+    approach:
+      'We focused on audience engagement and consistent brand communication, helping the brand build a growing community and a stronger position in the competitive fashion market.',
+    services: ['Social Media Marketing', 'Creative Strategy', 'Content Marketing', 'Brand Growth'],
+    metrics: [
+      { value: '205K+', label: 'reach' },
+      { value: '25K+', label: 'engagements' },
+      { value: '1.5K+', label: 'new followers' },
+    ],
+    highlight: { value: '205K+', label: 'account reach' },
+    color: '#a87242',
+    image: '/case-studies/apparel-digital-presence.png',
+  },
+  {
+    id: 'real-estate-leads',
+    title: 'Real Estate Brand',
+    industry: 'Real Estate',
+    primaryService: 'Lead Generation',
+    summary:
+      'Targeted campaigns and property-focused creatives that turned social into a reliable buyer-inquiry channel.',
+    approach:
+      'By combining targeted campaigns, compelling property-focused creatives, and audience-driven messaging, we helped the brand expand its reach, increase visibility, and connect with prospective buyers actively exploring real estate opportunities.',
+    services: ['Social Media Marketing', 'Lead Generation', 'Creative Strategy', 'Performance Campaigns'],
+    metrics: [
+      { value: '37K+', label: 'reach' },
+      { value: '22K+', label: 'impressions' },
+      { value: '150+', label: 'qualified leads' },
+    ],
+    highlight: { value: '150+', label: 'qualified buyer leads' },
+    color: '#c89368',
+    image: '/case-studies/real-estate-leads.png',
+  },
+  {
+    id: 'family-entertainment',
+    title: 'Arcade, Playzone & Family Entertainment Venue',
+    industry: 'Family Entertainment & Hospitality',
+    primaryService: 'Social + Content',
+    summary:
+      'Experience-led social campaigns that positioned a family destination as the preferred choice for fun and recreation.',
+    approach:
+      'Through strategic social media campaigns and engaging content, we showcased experiences rather than just facilities — increasing brand visibility, driving profile engagement, and positioning the venue as a preferred destination for families.',
+    services: ['Social Media Marketing', 'Content Strategy', 'Creative Design', 'Community Engagement'],
+    metrics: [
+      { value: '9.6K+', label: 'impressions' },
+      { value: '8.7K+', label: 'reach' },
+      { value: '5K+', label: 'profile visits' },
+    ],
+    highlight: { value: '5K+', label: 'profile visits' },
+    color: '#d4a576',
+    image: '/case-studies/family-entertainment.png',
   },
 ]
 
-function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Project) => void }) {
+// ─── Card ───────────────────────────────────────────────────────────────────
+
+function ProjectCard({ project, onClick }: { project: CaseStudy; onClick: (p: CaseStudy) => void }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.2 }}
-      
+      viewport={{ once: true, amount: 0.15 }}
       onClick={() => onClick(project)}
       className="rounded-2xl border border-[#a87242]/20 card-hover overflow-hidden group relative cursor-pointer transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
-      style={{ background: 'rgba(26,18,12,0.45)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
+      style={{
+        background: 'rgba(26,18,12,0.45)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+      }}
     >
-      {/* Image header */}
-      <div className="relative h-52 overflow-hidden bg-[#1a120c]">
+      {/* Image / typographic fallback */}
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#1a120c]">
+        {/* Brand-coloured fallback gradient (always present) */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: `linear-gradient(135deg, #1a120c 0%, ${project.color} 130%)` }}
+        />
+        {/* Subtle grain texture so the gradient feels intentional, not blank */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 35%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0%, transparent 35%)',
+          }}
+        />
+        {/* Image (graceful fail) */}
         <img
           src={project.image}
-          alt={`${project.title} – ${project.tag}`}
+          alt={`${project.title} — ${project.summary}`}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          decoding="async"
+          onError={(e) => {
+            const img = e.currentTarget as HTMLImageElement
+            img.style.display = 'none'
+          }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
-        {/* Warm tint blend */}
-        <div className="absolute inset-0 mix-blend-multiply opacity-40"
-          style={{ background: `linear-gradient(135deg, #1a120c 0%, ${project.color} 120%)` }} />
-        {/* Bottom fade for tag readability */}
-        <div className="absolute inset-x-0 bottom-0 h-20"
-          style={{ background: 'linear-gradient(180deg, transparent, rgba(10,8,7,0.85))' }} />
+        {/* Restrained warm tint */}
+        <div
+          aria-hidden
+          className="absolute inset-0 mix-blend-multiply opacity-20 pointer-events-none"
+          style={{ background: `linear-gradient(135deg, #1a120c 0%, ${project.color} 120%)` }}
+        />
+        {/* Bottom fade */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+          style={{ background: 'linear-gradient(180deg, transparent, rgba(10,8,7,0.95))' }}
+        />
 
-        {/* Tag pinned on image */}
+        {/* Industry pill — top left */}
         <span
-          className="absolute top-4 left-4 inline-block text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm"
-          style={{ background: `${project.color}40`, color: '#fff', border: `1px solid ${project.color}80` }}
+          className="absolute top-4 left-4 inline-flex items-center text-[10px] sm:text-xs font-semibold uppercase tracking-[0.22em] px-3 py-1.5 rounded-full backdrop-blur-md border z-10"
+          style={{
+            background: `${project.color}30`,
+            color: '#fff',
+            borderColor: `${project.color}80`,
+          }}
         >
-          {project.tag}
+          {project.industry}
         </span>
+
+        {/* Highlight metric — bottom left, editorial */}
+        <div className="absolute bottom-5 left-5 right-5 z-10">
+          <p
+            className="font-bold text-white leading-none tracking-tight mb-1.5"
+            style={{
+              fontSize: 'clamp(34px, 4.5vw, 56px)',
+              letterSpacing: '-0.03em',
+            }}
+          >
+            {project.highlight.value}
+          </p>
+          <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.2em] text-white/65">
+            {project.highlight.label}
+          </p>
+        </div>
       </div>
 
+      {/* Card body */}
       <div className="p-7">
-        {/* Title */}
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] mb-3" style={{ color: project.color }}>
+          {project.primaryService}
+        </p>
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-3 leading-tight group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
           {project.title}
         </h3>
+        <p className="text-sm text-white/55 leading-relaxed mb-6 line-clamp-2">{project.summary}</p>
 
-        <p className="text-sm text-white/50 leading-relaxed mb-7">
-          {project.clientContext}
-        </p>
-
-        {/* Metric */}
-        <div className="flex items-end gap-3 pt-5 border-t border-[#a87242]/20">
-          <span className="text-4xl font-bold" style={{ color: project.color }}>
-            {project.metric}
+        <div className="flex items-center justify-between pt-5 border-t border-[#a87242]/15">
+          <span className="text-xs text-white/35 font-medium uppercase tracking-[0.2em]">
+            {project.metrics.length} key metrics
           </span>
-          <span className="text-sm text-white/40 mb-1">{project.metricLabel}</span>
-          <span className="ml-auto text-white/30 group-hover:text-[#c89368] transition-[color,border-color,background-color,opacity] duration-200 ease-out text-sm">
-            View case study →
+          <span
+            className="text-xs font-semibold flex items-center gap-1 transition-transform duration-200 group-hover:translate-x-0.5"
+            style={{ color: project.color }}
+          >
+            View case →
           </span>
         </div>
       </div>
@@ -128,7 +278,9 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: (p: Proj
   )
 }
 
-function CaseStudyModal({ project, onClose }: { project: Project; onClose: () => void }) {
+// ─── Modal ──────────────────────────────────────────────────────────────────
+
+function CaseStudyModal({ project, onClose }: { project: CaseStudy; onClose: () => void }) {
   return (
     <motion.div
       className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
@@ -138,54 +290,119 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
       onClick={onClose}
     >
       <motion.div
-        className="rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-[#a87242]/30"
-        style={{ background: 'rgba(17,13,10,0.9)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
+        className="rounded-2xl max-w-3xl w-full max-h-[88vh] overflow-y-auto border border-[#a87242]/30"
+        style={{ background: 'rgba(17,13,10,0.92)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Hero image */}
-        <div className="relative h-48 md:h-56 overflow-hidden rounded-t-2xl bg-[#1a120c]">
+        {/* Hero image / fallback */}
+        <div className="relative h-56 md:h-72 overflow-hidden rounded-t-2xl bg-[#1a120c]">
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: `linear-gradient(135deg, #1a120c 0%, ${project.color} 130%)` }}
+          />
           <img
             src={project.image}
             alt={project.title}
+            onError={(e) => {
+              const img = e.currentTarget as HTMLImageElement
+              img.style.display = 'none'
+            }}
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 mix-blend-multiply opacity-50"
-            style={{ background: `linear-gradient(135deg, #1a120c, ${project.color})` }} />
-          <div className="absolute inset-x-0 bottom-0 h-24"
-            style={{ background: 'linear-gradient(180deg, transparent, rgba(17,13,10,1))' }} />
+          <div
+            aria-hidden
+            className="absolute inset-0 mix-blend-multiply opacity-25"
+            style={{ background: `linear-gradient(135deg, #1a120c, ${project.color})` }}
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-28"
+            style={{ background: 'linear-gradient(180deg, transparent, rgba(17,13,10,1))' }}
+          />
         </div>
-        <div className="p-8 md:p-10 -mt-10 relative">
-          <div className="flex items-start justify-between mb-8">
-            <div>
-              <span className="text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block"
-                style={{ background: `${project.color}25`, color: '#fff', border: `1px solid ${project.color}80` }}>
-                {project.tag}
+
+        <div className="p-8 md:p-10 -mt-12 relative">
+          <div className="flex items-start justify-between mb-7 gap-6">
+            <div className="flex-1 min-w-0">
+              <span
+                className="inline-block text-[10px] sm:text-xs font-semibold px-3 py-1.5 rounded-full mb-4 uppercase tracking-[0.22em] border"
+                style={{
+                  background: `${project.color}25`,
+                  color: '#fff',
+                  borderColor: `${project.color}80`,
+                }}
+              >
+                {project.industry}
               </span>
-              <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
+              <h3
+                className="font-bold text-white leading-[1.05] tracking-tight"
+                style={{ fontSize: 'clamp(24px, 3vw, 38px)', letterSpacing: '-0.02em' }}
+              >
+                {project.title}
+              </h3>
             </div>
-            <button onClick={onClose} className="text-white/40 hover:text-white transition-[color,border-color,background-color,opacity] duration-200 ease-out p-2 rounded-lg hover:bg-white/5 ml-4">
+            <button
+              onClick={onClose}
+              className="flex-shrink-0 text-white/40 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+              aria-label="Close"
+            >
               ✕
             </button>
           </div>
 
-          <div className="space-y-6">
-            {[
-              { label: 'Context', text: project.clientContext },
-              { label: 'Challenge', text: project.challenge },
-              { label: 'Approach', text: project.approach },
-            ].map(({ label, text }) => (
-              <div key={label}>
-                <p className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-2">{label}</p>
-                <p className="text-white/70 leading-relaxed">{text}</p>
-              </div>
-            ))}
+          {/* Approach */}
+          <div className="mb-9">
+            <p className="text-xs font-semibold text-white/35 uppercase tracking-[0.22em] mb-3">Approach</p>
+            <p className="text-base sm:text-lg text-white/75 leading-relaxed">{project.approach}</p>
+          </div>
 
-            <div className="rounded-xl p-6" style={{ background: `${project.color}15`, border: `1px solid ${project.color}30` }}>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: project.color }}>Result</p>
-              <p className="text-2xl font-bold text-white">{project.result}</p>
+          {/* Metrics grid */}
+          <div className="mb-9">
+            <p className="text-xs font-semibold text-white/35 uppercase tracking-[0.22em] mb-4">Results</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-px rounded-xl overflow-hidden border border-[#a87242]/20" style={{ background: 'rgba(255,255,255,0.04)' }}>
+              {project.metrics.map((m, i) => (
+                <div
+                  key={m.label}
+                  className={`p-5 sm:p-6 ${i < project.metrics.length - 1 ? 'border-r border-[#a87242]/15' : ''}`}
+                  style={{ background: 'rgba(10,8,7,0.55)' }}
+                >
+                  <p
+                    className="font-bold text-white leading-none tracking-tight mb-2"
+                    style={{
+                      fontSize: 'clamp(22px, 2.6vw, 32px)',
+                      letterSpacing: '-0.02em',
+                      color: i === 0 ? project.color : undefined,
+                    }}
+                  >
+                    {m.value}
+                  </p>
+                  <p className="text-[10px] sm:text-xs text-white/45 uppercase tracking-[0.18em]">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <p className="text-xs font-semibold text-white/35 uppercase tracking-[0.22em] mb-4">Services delivered</p>
+            <div className="flex flex-wrap gap-2">
+              {project.services.map((s) => (
+                <span
+                  key={s}
+                  className="text-xs sm:text-sm px-3 py-1.5 rounded-full border font-medium"
+                  style={{
+                    borderColor: `${project.color}40`,
+                    color: project.color,
+                    background: `${project.color}10`,
+                  }}
+                >
+                  {s}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -194,32 +411,41 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
   )
 }
 
+// ─── Section ────────────────────────────────────────────────────────────────
+
 export default function FeaturedWorkSection() {
-  const [selected, setSelected] = useState<Project | null>(null)
+  const [selected, setSelected] = useState<CaseStudy | null>(null)
 
   return (
-    <Section id="featured-work" className="py-20 md:py-32 bg-[#0a0807]">
+    <Section id="featured-work" className="py-24 md:py-36 bg-[#0a0807]">
       <Container maxWidth="xl">
-        {/* Header */}
+        {/* Header — left-aligned editorial */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-12 md:mb-16"
+          className="mb-14 md:mb-20 max-w-3xl"
         >
-          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">Featured Work</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 md:mb-6 leading-[1.1]">
-            Results that <span className="font-serif-italic font-normal text-[#d4a576]">speak</span><br />for themselves
+          <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-[0.25em] mb-5">
+            Featured Work
+          </p>
+          <h2
+            className="text-white leading-[1.02] tracking-tight font-bold mb-6"
+            style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', letterSpacing: '-0.02em' }}
+          >
+            Numbers don't lie.{' '}
+            <span className="font-serif-italic font-normal text-[#d4a576]">Neither does our work.</span>
           </h2>
-          <p className="text-lg text-white/50 max-w-2xl">
-            Case studies showcasing measurable outcomes from our strategic partnerships.
-            Click any card to explore the full story.
+          <p className="text-base sm:text-lg text-white/55 max-w-xl leading-relaxed">
+            Real campaigns. Real outcomes. Below are some of the engagements we've delivered for clients
+            across fashion, real estate, fitness, design, and entertainment. Click any case to see the
+            full story.
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Grid — 1/2/3 cols, asymmetric on lg via row-span/col-span if needed */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {PROJECTS.map((p) => (
             <ProjectCard key={p.id} project={p} onClick={setSelected} />
           ))}
