@@ -27,7 +27,7 @@ const items: CreativeItem[] = [
     metric: '₹57.48L+ sales generated',
     color: '#a87242',
     span: 'md:col-span-2',
-    image: '/case-studies/fashion-ecommerce-sales.png',
+    image: '/case-studies/fashion%26apparel-brand.png',
   },
   {
     id: 'fitness-wellness-growth',
@@ -38,7 +38,7 @@ const items: CreativeItem[] = [
     metric: '550K+ reach',
     color: '#c89368',
     span: '',
-    image: '/case-studies/fitness-wellness-growth.png',
+    image: '/case-studies/fitness%26wellness-brand.png',
   },
   {
     id: 'interior-design-authority',
@@ -49,7 +49,7 @@ const items: CreativeItem[] = [
     metric: '208K+ impressions',
     color: '#d4a576',
     span: '',
-    image: '/case-studies/interior-design-authority.png',
+    image: '/case-studies/interiordesign-brand.png',
   },
   {
     id: 'real-estate-leads',
@@ -60,7 +60,7 @@ const items: CreativeItem[] = [
     metric: '150+ qualified leads',
     color: '#8b5e3c',
     span: '',
-    image: '/case-studies/real-estate-leads.png',
+    image: '/case-studies/realestate-brand.png',
   },
   {
     id: 'family-entertainment',
@@ -71,7 +71,7 @@ const items: CreativeItem[] = [
     metric: '5K+ profile visits',
     color: '#a87242',
     span: 'md:col-span-2',
-    image: '/case-studies/family-entertainment.png',
+    image: '/case-studies/arcade%26playzone-brand.png',
   },
 ]
 

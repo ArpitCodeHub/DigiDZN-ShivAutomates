@@ -35,7 +35,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'FE',
     color: '#a87242',
-    image: '/case-studies/fashion-ecommerce-sales.png',
+    image: '/case-studies/fashion%26apparel-brand.png',
   },
   {
     id: 'fitness-wellness',
@@ -52,7 +52,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'FW',
     color: '#c89368',
-    image: '/case-studies/fitness-wellness-growth.png',
+    image: '/case-studies/fitness%26wellness-brand.png',
   },
   {
     id: 'interior-design-authority',
@@ -69,7 +69,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'ID',
     color: '#d4a576',
-    image: '/case-studies/interior-design-authority.png',
+    image: '/case-studies/interiordesign-brand.png',
   },
   {
     id: 'real-estate',
@@ -85,7 +85,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'RE',
     color: '#8b5e3c',
-    image: '/case-studies/real-estate-leads.png',
+    image: '/case-studies/realestate-brand.png',
   },
   {
     id: 'apparel',
@@ -101,7 +101,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'AB',
     color: '#a87242',
-    image: '/case-studies/apparel-digital-presence.png',
+    image: '/case-studies/stronger-digital-presence_apparel-brand.png',
   },
   {
     id: 'family-entertainment',
@@ -117,7 +117,7 @@ const STORIES: ClientStory[] = [
     ],
     initials: 'FE',
     color: '#c89368',
-    image: '/case-studies/family-entertainment.png',
+    image: '/case-studies/arcade%26playzone-brand.png',
   },
 ]
 
