@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+﻿import { useState, lazy, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import VideoEntry from './components/VideoEntry'
 import TransitionOverlay from './components/TransitionOverlay'
@@ -6,24 +6,49 @@ import Homepage from './components/Homepage'
 import ServicesPage from './components/ServicesPage'
 import BlogsPage from './components/BlogsPage'
 import LeadFormModal from './components/LeadFormModal'
-import AdminPage from './components/admin/AdminPage'
 import { Container } from './sections/Section'
 
 export type PageView = 'home' | 'services' | 'blogs'
 
 // Detect admin route on initial load. /admin and /admin/* both render the admin page.
+// Computed at module load — constant for the lifetime of the app instance.
 const isAdminRoute = typeof window !== 'undefined' && window.location.pathname.startsWith('/admin')
 
-export default function App() {
-  // Admin route bypasses everything else — no video entry, no marketing chrome.
-  if (isAdminRoute) {
-    return <AdminPage />
-  }
+// Lazy-load admin so the public marketing site doesn't import Supabase at all
+// on first paint. If anything fails inside the admin bundle, the public site
+// stays alive.
+const AdminPage = lazy(() => import('./components/admin/AdminPage'))
 
+function AdminFallback() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#0a0807]">
+      <div className="flex items-center gap-3 text-white/50 text-sm">
+        <span
+          className="w-4 h-4 rounded-full border-2 border-[#a87242]/40 border-t-[#d4a576] animate-spin"
+          aria-hidden
+        />
+        Loading admin…
+      </div>
+    </div>
+  )
+}
+
+export default function App() {
+  // Hooks must always run, in the same order, on every render of this
+  // component instance — even if we end up returning the admin tree below.
   const [isVideoComplete, setIsVideoComplete] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [leadFormOpen, setLeadFormOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState<PageView>('home')
+
+  // Admin route bypasses the marketing experience entirely.
+  if (isAdminRoute) {
+    return (
+      <Suspense fallback={<AdminFallback />}>
+        <AdminPage />
+      </Suspense>
+    )
+  }
 
   const handleVideoComplete = () => {
     setIsVideoComplete(true)

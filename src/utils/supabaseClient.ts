@@ -7,7 +7,13 @@ if (!supabaseUrl || !supabaseAnonKey) {
   console.warn('Supabase credentials not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env.local')
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Use safe placeholders if env is missing so createClient doesn't throw at
+// module-load time (which would crash the entire app on first paint).
+// Calls against the client will fail at request time with a clear error.
+const safeUrl = supabaseUrl || 'https://placeholder.supabase.co'
+const safeKey = supabaseAnonKey || 'placeholder-anon-key'
+
+export const supabase = createClient(safeUrl, safeKey)
 
 /**
  * Verify required environment variables are set
