@@ -27,8 +27,18 @@ const services = [
     framework: 'Discover → Optimize → Build Authority → AI Visibility → Scale',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'E-commerce Brand', outcome: 'Top rankings across 40+ commercial keywords', tag: 'Retail' },
-      { title: 'D2C SaaS', outcome: 'Featured in AI Overviews for 12 target queries', tag: 'Tech' },
+      {
+        title: 'Interior Design & Architecture Studio',
+        outcome: '208K+ impressions and 12.6K+ followers from visibility-led content & social work.',
+        tag: 'Interior Design',
+        image: '/case-studies/interiordesign-brand.png',
+      },
+      {
+        title: 'Fashion & Apparel E-Commerce Brand',
+        outcome: '340K+ website visits funnelled into product discovery alongside paid traffic.',
+        tag: 'Fashion',
+        image: '/case-studies/fashion%26apparel-brand.png',
+      },
     ],
   },
   {
@@ -53,8 +63,18 @@ const services = [
     framework: 'Research → Plan → Create → Distribute → Optimize',
     image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'B2B SaaS Company', outcome: 'Content drives 40% of all inbound leads', tag: 'Tech' },
-      { title: 'D2C Brand', outcome: 'Blog traffic up 250% in 8 months', tag: 'Retail' },
+      {
+        title: 'Fitness & Wellness Brand',
+        outcome: 'Strategic content unlocked 401K+ page views and 88K+ video views.',
+        tag: 'Fitness',
+        image: '/case-studies/fitness%26wellness-brand.png',
+      },
+      {
+        title: 'Interior Design & Architecture Studio',
+        outcome: 'Editorial content turned the studio into a recognised industry voice.',
+        tag: 'Interior Design',
+        image: '/case-studies/interiordesign-brand.png',
+      },
     ],
   },
   {
@@ -79,8 +99,18 @@ const services = [
     framework: 'Discover → Match → Execute → Amplify → Measure',
     image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'Fashion Brand', outcome: '180% follower growth in 90 days', tag: 'Fashion' },
-      { title: 'Consumer Tech', outcome: 'UGC campaign — 12M organic impressions', tag: 'Tech' },
+      {
+        title: 'Apparel Brand',
+        outcome: 'Community-led growth — 205K+ reach and 1.5K+ new followers in a competitive market.',
+        tag: 'Fashion',
+        image: '/case-studies/stronger-digital-presence_apparel-brand.png',
+      },
+      {
+        title: 'Family Entertainment Venue',
+        outcome: 'Experience-led creative drove 5K+ profile visits and 8.7K+ reach.',
+        tag: 'Hospitality',
+        image: '/case-studies/arcade%26playzone-brand.png',
+      },
     ],
   },
   {
@@ -105,8 +135,18 @@ const services = [
     framework: 'Discover → Position → Design → Launch → Evolve',
     image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'FinTech Startup', outcome: 'Full rebrand ahead of Series A raise', tag: 'Finance' },
-      { title: 'Hospitality Group', outcome: 'New identity rolled out across 12 locations', tag: 'Hospitality' },
+      {
+        title: 'Interior Design & Architecture Studio',
+        outcome: 'Brand-building campaign — 12.6K+ followers and recognition as a category authority.',
+        tag: 'Interior Design',
+        image: '/case-studies/interiordesign-brand.png',
+      },
+      {
+        title: 'Apparel Brand',
+        outcome: 'Stronger digital identity drove 25K+ engagements and a loyal following.',
+        tag: 'Fashion',
+        image: '/case-studies/stronger-digital-presence_apparel-brand.png',
+      },
     ],
   },
   {
@@ -131,8 +171,18 @@ const services = [
     framework: 'Concept → Create → Produce → Distribute → Optimize',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'Consumer App', outcome: '120 reels produced in a single quarter', tag: 'Tech' },
-      { title: 'D2C Brand', outcome: '8× more ad creatives, 35% lower CPA', tag: 'Retail' },
+      {
+        title: 'Fashion & Apparel E-Commerce Brand',
+        outcome: 'Performance creatives that converted — ₹57.48L+ in tracked sales from ₹5.54L spend.',
+        tag: 'Fashion',
+        image: '/case-studies/fashion%26apparel-brand.png',
+      },
+      {
+        title: 'Fitness & Wellness Brand',
+        outcome: 'Visual storytelling at scale — 88K+ video views and 70K+ engagements.',
+        tag: 'Fitness',
+        image: '/case-studies/fitness%26wellness-brand.png',
+      },
     ],
   },
   {
@@ -157,8 +207,18 @@ const services = [
     framework: 'Research → Create → Engage → Amplify → Grow',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'D2C Fashion', outcome: '180% follower growth in 90 days', tag: 'Fashion' },
-      { title: 'B2B Software Co.', outcome: '3× LinkedIn engagement vs. industry avg', tag: 'Tech' },
+      {
+        title: 'Interior Design & Architecture Studio',
+        outcome: '208K+ impressions, 22K+ engagements, 12.6K+ followers from social-led visibility.',
+        tag: 'Interior Design',
+        image: '/case-studies/interiordesign-brand.png',
+      },
+      {
+        title: 'Real Estate Brand',
+        outcome: 'Social-driven campaigns generated 150+ qualified buyer inquiries.',
+        tag: 'Real Estate',
+        image: '/case-studies/realestate-brand.png',
+      },
     ],
   },
   {
@@ -183,8 +243,18 @@ const services = [
     framework: 'Research → Launch → Optimize → Scale → Grow',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'D2C Health Brand', outcome: '2.8× ROAS improvement after audit', tag: 'Health' },
-      { title: 'EdTech Startup', outcome: 'CAC reduced by 42% in 60 days', tag: 'Education' },
+      {
+        title: 'Fashion & Apparel E-Commerce Brand',
+        outcome: '₹57.48L+ in sales from ₹5.54L ad spend — clear ROAS at scale.',
+        tag: 'Fashion',
+        image: '/case-studies/fashion%26apparel-brand.png',
+      },
+      {
+        title: 'Interior Design Brand',
+        outcome: '355 qualified leads at ₹148.88 CPL from performance + lead-gen campaigns.',
+        tag: 'Interior Design',
+        image: '/case-studies/driving-lead-gen_interiordesign-brand.png',
+      },
     ],
   },
   {
@@ -209,8 +279,18 @@ const services = [
     framework: 'Audit → Build → Launch → Optimize → Retain',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'Fashion D2C', outcome: '40% lift in conversion rate after optimization', tag: 'Retail' },
-      { title: 'Beauty Brand', outcome: 'Repeat purchase rate up from 18% to 34%', tag: 'FMCG' },
+      {
+        title: 'Fashion & Apparel E-Commerce Brand',
+        outcome: '₹57.48L+ in sales · 340K+ visits · 5,701 add to carts.',
+        tag: 'Fashion',
+        image: '/case-studies/fashion%26apparel-brand.png',
+      },
+      {
+        title: 'Apparel Brand',
+        outcome: 'Brand engine feeding the conversion funnel — 205K+ reach and 25K+ engagements.',
+        tag: 'Fashion',
+        image: '/case-studies/stronger-digital-presence_apparel-brand.png',
+      },
     ],
   },
 ]
@@ -440,20 +520,54 @@ function ServiceDeepDive({ svc, index }: { svc: typeof services[0]; index: numbe
           {svc.relatedWork.map(work => (
             <div
               key={work.title}
-              className="rounded-xl border border-[#a87242]/20 p-4 sm:p-5 group cursor-pointer hover:border-[#a87242]/40 transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
+              className="rounded-xl border border-[#a87242]/20 p-3 sm:p-4 group cursor-pointer hover:border-[#a87242]/40 transition-[transform,box-shadow,border-color,opacity] duration-300 ease-out"
               style={{ background: 'rgba(255,255,255,0.025)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-semibold text-white text-sm mb-1 group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">{work.title}</p>
-                  <p className="text-xs text-white/50 leading-relaxed">{work.outcome}</p>
+              <div className="flex items-stretch gap-3 sm:gap-4">
+                {/* Thumbnail with brand-tinted fallback */}
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-lg overflow-hidden bg-[#1a120c]">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(135deg, #1a120c 0%, ${svc.color} 130%)` }}
+                  />
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      const img = e.currentTarget as HTMLImageElement
+                      img.style.display = 'none'
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 mix-blend-multiply opacity-25"
+                    style={{ background: `linear-gradient(135deg, #1a120c, ${svc.color})` }}
+                  />
                 </div>
-                <span
-                  className="text-xs px-2.5 py-1 rounded-full flex-shrink-0"
-                  style={{ background: `${svc.color}18`, color: svc.color }}
-                >
-                  {work.tag}
-                </span>
+
+                {/* Text */}
+                <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="font-semibold text-white text-sm leading-tight group-hover:text-[#d4a576] transition-[color,border-color,background-color,opacity] duration-200 ease-out">
+                      {work.title}
+                    </p>
+                    <span
+                      className="text-[10px] font-medium uppercase tracking-[0.14em] px-2 py-0.5 rounded-full flex-shrink-0 border"
+                      style={{
+                        background: `${svc.color}15`,
+                        color: svc.color,
+                        borderColor: `${svc.color}30`,
+                      }}
+                    >
+                      {work.tag}
+                    </span>
+                  </div>
+                  <p className="text-xs text-white/55 leading-relaxed mt-2">{work.outcome}</p>
+                </div>
               </div>
             </div>
           ))}
