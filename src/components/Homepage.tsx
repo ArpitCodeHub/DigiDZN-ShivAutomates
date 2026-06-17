@@ -248,7 +248,7 @@ function FinalCTA({ onOpen }: { onOpen: () => void }) {
   )
 }
 
-function Footer() {
+function Footer({ onContactClick }: { onContactClick: () => void }) {
   return (
     <footer className="border-t border-[#a87242]/20 bg-[#0a0807] py-10 md:py-12">
       <Container maxWidth="xl">
@@ -256,14 +256,18 @@ function Footer() {
           <span className="text-base font-black text-white tracking-[0.2em]">DIGIDZN</span>
           <p className="text-xs sm:text-sm text-white/30 order-3 md:order-2">© 2026 DigiDZN. Engineering attention into growth.</p>
           <div className="flex gap-5 sm:gap-6 order-2 md:order-3">
-            {[
-              { label: 'Privacy', href: '#' },
-              { label: 'Terms',   href: '#' },
-              { label: 'Contact', href: '#' },
-              { label: 'Admin',   href: '/admin' },
-            ].map(l => (
-              <a key={l.label} href={l.href} className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-[color,border-color,background-color,opacity] duration-200 ease-out">{l.label}</a>
-            ))}
+            <button
+              onClick={onContactClick}
+              className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-[color,border-color,background-color,opacity] duration-200 ease-out"
+            >
+              Contact
+            </button>
+            <a
+              href="/admin"
+              className="text-xs sm:text-sm text-white/35 hover:text-white/80 transition-[color,border-color,background-color,opacity] duration-200 ease-out"
+            >
+              Admin
+            </a>
           </div>
         </div>
       </Container>
@@ -283,7 +287,7 @@ export default function Homepage({ leadFormOpen, setLeadFormOpen, onNavigateToSe
       <TestimonialsSection />
       <TeamSection />
       <FinalCTA onOpen={() => setLeadFormOpen(true)} />
-      <Footer />
+      <Footer onContactClick={() => setLeadFormOpen(true)} />
 
       <AnimatePresence>
         {leadFormOpen && <LeadFormModal onClose={() => setLeadFormOpen(false)} />}
