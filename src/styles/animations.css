@@ -27,6 +27,13 @@
   display: block;
 }
 
+/* Mobile override — see index.css for rationale. */
+@media (max-width: 767px) {
+  .video-element {
+    object-fit: contain;
+  }
+}
+
 /* ==================== */
 /* 2. Transition Overlay */
 /* ==================== */

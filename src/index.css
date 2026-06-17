@@ -42,6 +42,16 @@ body {
   object-fit: cover; object-position: center; display: block;
 }
 
+/* Mobile: switch to "contain" so the full DIGIDZN logo in the vertical
+   video is always visible regardless of the device's aspect ratio.
+   Container is already black so any letterboxing blends in seamlessly.
+   Breakpoint matches the JS branch in VideoEntry.tsx (< 768px). */
+@media (max-width: 767px) {
+  .video-element {
+    object-fit: contain;
+  }
+}
+
 .homepage { width: 100%; background: var(--bg); overflow-x: hidden; }
 
 :focus-visible { outline: 2px solid var(--brown-2); outline-offset: 3px; }
