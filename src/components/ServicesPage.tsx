@@ -7,94 +7,180 @@ import Section, { Container } from '../sections/Section'
 const services = [
   {
     id: 'seo',
-    slug: 'SEO',
-    icon: '🔍',
+    slug: 'SEO + GEO',
+    icon: '01',
     color: '#a87242',
-    tagline: 'Be found first.',
-    headline: 'Search Engine Optimisation',
-    what: 'SEO is the practice of making your website the most relevant, trustworthy result for the searches your customers are already making.',
-    why: 'Over 90% of online experiences begin with a search engine. Brands that own the first page own the conversation — and the leads that come with it.',
+    tagline: 'Get found everywhere — search and AI.',
+    headline: 'SEO, AEO & GEO Services That Help Your Brand Get Found Everywhere',
+    what: "Your customers are no longer searching only on Google. They're asking questions on ChatGPT, Gemini, Perplexity, Google AI Overviews, YouTube, and voice assistants before making purchasing decisions. We improve visibility across traditional search engines and AI-powered search experiences through SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO).",
+    why: "Search behaviour has evolved dramatically. Customers now expect instant answers instead of browsing through multiple pages of results. AI-powered platforms have become discovery engines that influence buying decisions, brand perception, and customer journeys. If your business isn't visible where customers are searching today, you risk losing opportunities to competitors.",
     approach:
-      'We start with a full technical audit, then layer in competitive keyword mapping, on-page content strategy, and authoritative link-building. Everything is tied to business outcomes, not vanity metrics.',
+      "We combine three disciplines into a unified search visibility strategy. SEO improves rankings on Google through technical optimization and content strategy. AEO targets featured snippets, AI Overviews, and voice search experiences. GEO improves visibility across AI platforms through entity optimization, authority building, citations, and knowledge graph enhancements.",
     deliverables: [
-      'Technical site audit & fix roadmap',
-      'Keyword strategy & content calendar',
-      'On-page optimisation',
-      'Link-building campaigns',
-      'Monthly ranking & traffic reports',
+      'Technical SEO & Local SEO',
+      'On-Page & Off-Page SEO',
+      'SEO Content Strategy & Link Building',
+      'Featured Snippet & AI Search Optimization',
+      'Knowledge Graph & Citation Building',
+      'Google Business Profile Optimization',
     ],
+    framework: 'Discover → Optimize → Build Authority → AI Visibility → Scale',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'E-commerce Brand', outcome: '#1 ranking for 40+ target keywords', tag: 'Retail' },
-      { title: 'SaaS Platform', outcome: '320% organic traffic growth in 6 months', tag: 'Tech' },
+      { title: 'E-commerce Brand', outcome: 'Top rankings across 40+ commercial keywords', tag: 'Retail' },
+      { title: 'D2C SaaS', outcome: 'Featured in AI Overviews for 12 target queries', tag: 'Tech' },
     ],
   },
   {
-    id: 'geo',
-    slug: 'GEO',
-    icon: '📍',
+    id: 'content',
+    slug: 'Content',
+    icon: '02',
     color: '#c89368',
-    tagline: 'Right place. Right person.',
-    headline: 'Geo-Location Marketing',
-    what: 'GEO marketing uses location intelligence to serve hyper-relevant ads and content to potential customers at the exact moment they are most likely to act.',
-    why: "Location context is the strongest purchase-intent signal available. A person searching near your competitor is your best prospect — if you reach them first.",
+    tagline: 'Trust. Visibility. Demand.',
+    headline: 'Content Marketing That Builds Trust, Visibility & Demand',
+    what: "People don't buy because they see an advertisement. They buy because they trust the brand behind it. We help businesses create content that attracts attention, educates audiences, strengthens authority, and supports long-term growth.",
+    why: "Content powers search visibility. Content powers AI visibility. Content powers social engagement. Content powers trust. Brands that consistently invest in content marketing remain discoverable long after campaigns end.",
     approach:
-      'We build geo-fenced audiences, layer in behavioural and demographic signals, then craft messaging tuned to location context. Campaigns are continuously optimised against foot-traffic and conversion data.',
+      "We build content aligned with customer journeys, position your brand as an industry expert, distribute across websites, search, social media, and AI platforms, and continuously measure and improve effectiveness so every asset compounds in value over time.",
     deliverables: [
-      'Geo-audience strategy & build',
-      'Location-triggered ad campaigns',
-      'Competitor geo-fencing',
-      'Foot-traffic attribution',
-      'Performance dashboards',
+      'SEO, GEO & AEO Content',
+      'Website Copywriting & Blog Writing',
+      'LinkedIn Thought Leadership',
+      'Case Studies & Email Marketing',
+      'Video Scripts',
+      'Content Repurposing',
     ],
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=900&q=80&auto=format&fit=crop',
+    framework: 'Research → Plan → Create → Distribute → Optimize',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'Restaurant Chain', outcome: '65% increase in foot traffic from ads', tag: 'Hospitality' },
-      { title: 'Retail Group', outcome: '4.2× ROAS on geo-targeted campaigns', tag: 'Retail' },
+      { title: 'B2B SaaS Company', outcome: 'Content drives 40% of all inbound leads', tag: 'Tech' },
+      { title: 'D2C Brand', outcome: 'Blog traffic up 250% in 8 months', tag: 'Retail' },
+    ],
+  },
+  {
+    id: 'influencer',
+    slug: 'Influencer',
+    icon: '03',
+    color: '#d4a576',
+    tagline: 'Trust that drives action.',
+    headline: 'Influencer Marketing That Builds Trust & Drives Action',
+    what: "Consumers trust people more than advertisements. Influencer marketing helps brands connect with audiences through authentic recommendations, creator-led storytelling, and community-driven engagement. We help brands identify the right creators, execute campaigns, and measure real business impact.",
+    why: "Modern consumers research products through creators, influencers, and communities before making purchasing decisions. The right creator partnership can generate awareness, trust, engagement, and conversions faster than traditional advertising.",
+    approach:
+      "We discover creators aligned with your brand and audience, design campaigns based on business objectives, handle outreach and execution end-to-end, and track engagement, reach, and conversions so every collaboration is tied to measurable outcomes.",
+    deliverables: [
+      'Nano, Micro & Macro Influencers',
+      'Celebrity Collaborations',
+      'UGC Campaigns & Product Seeding',
+      'Brand Ambassador Programs',
+      'Influencer Events & Creator Partnerships',
+      'Campaign Analytics',
+    ],
+    framework: 'Discover → Match → Execute → Amplify → Measure',
+    image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=80&auto=format&fit=crop',
+    relatedWork: [
+      { title: 'Fashion Brand', outcome: '180% follower growth in 90 days', tag: 'Fashion' },
+      { title: 'Consumer Tech', outcome: 'UGC campaign — 12M organic impressions', tag: 'Tech' },
+    ],
+  },
+  {
+    id: 'branding',
+    slug: 'Branding',
+    icon: '04',
+    color: '#8b5e3c',
+    tagline: "Memorable. Trusted. Chosen.",
+    headline: 'Build A Brand That Customers Remember & Trust',
+    what: "Your logo is not your brand. Your brand is how people perceive, remember, and choose your business over competitors. We help businesses build distinctive brands that create stronger market positioning, trust, and long-term growth.",
+    why: "Products can be copied. Services can be replicated. Strong brands remain memorable. In crowded markets, branding becomes the difference between being noticed and being ignored.",
+    approach:
+      "We define positioning, purpose, and market differentiation through brand strategy. We create visual systems that communicate consistently through identity design. We develop messaging that resonates with target audiences, then ensure consistency across every customer touchpoint.",
+    deliverables: [
+      'Brand Strategy & Positioning',
+      'Logo Design & Visual Identity',
+      'Brand Guidelines',
+      'Packaging Design',
+      'Employer Branding & Rebranding',
+      'Marketing Collateral Design',
+    ],
+    framework: 'Discover → Position → Design → Launch → Evolve',
+    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80&auto=format&fit=crop',
+    relatedWork: [
+      { title: 'FinTech Startup', outcome: 'Full rebrand ahead of Series A raise', tag: 'Finance' },
+      { title: 'Hospitality Group', outcome: 'New identity rolled out across 12 locations', tag: 'Hospitality' },
+    ],
+  },
+  {
+    id: 'ai',
+    slug: 'AI Creative',
+    icon: '05',
+    color: '#a87242',
+    tagline: 'Scale creative without compromise.',
+    headline: 'AI-Powered Creative Production For Modern Brands',
+    what: "Content demand has never been higher. Brands need more creatives, more videos, and faster production cycles without compromising quality. We combine AI-powered workflows with human creativity to produce impactful visual content at scale.",
+    why: "The rise of short-form video, personalized content, and AI-powered content creation has transformed how brands communicate. Businesses need agile creative systems capable of producing high-performing content consistently.",
+    approach:
+      "We align creative concepts with marketing objectives, accelerate ideation and production through AI workflows, create engaging video content for digital platforms, and develop assets optimized for advertising campaigns.",
+    deliverables: [
+      'AI Creatives & Product Visuals',
+      'Social Media Creatives',
+      'Motion Graphics & Reels Production',
+      'Corporate & Explainer Videos',
+      'Ad Creatives & Video Editing',
+      'Creative Testing Assets',
+    ],
+    framework: 'Concept → Create → Produce → Distribute → Optimize',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80&auto=format&fit=crop',
+    relatedWork: [
+      { title: 'Consumer App', outcome: '120 reels produced in a single quarter', tag: 'Tech' },
+      { title: 'D2C Brand', outcome: '8× more ad creatives, 35% lower CPA', tag: 'Retail' },
     ],
   },
   {
     id: 'social',
     slug: 'Social',
-    icon: '💬',
-    color: '#d4a576',
-    tagline: 'Build community. Drive loyalty.',
-    headline: 'Social Media Marketing',
-    what: 'Social media marketing turns platforms into owned media channels — places where your brand builds real relationships and drives measurable business results.',
-    why: 'Your audience spends hours daily on social. Brands that show up consistently with valuable, entertaining content become the default choice when it is time to buy.',
+    icon: '06',
+    color: '#c89368',
+    tagline: 'Attention. Trust. Growth.',
+    headline: 'Social Media Marketing That Builds Attention, Trust & Growth',
+    what: "Social media is no longer just a communication channel. It has become one of the most powerful discovery platforms where customers research brands, seek recommendations, and make buying decisions. We help businesses build meaningful presence through strategy, content, community engagement, and performance-driven campaigns.",
+    why: "People discover products through Instagram Reels. They evaluate businesses through LinkedIn. They learn through YouTube. They trust recommendations from creators and communities. Brands that consistently create valuable content build stronger relationships and stay top-of-mind.",
     approach:
-      'We build platform-specific strategies, produce native creative content, manage community engagement, and run paid amplification on top of organic — all in one unified system.',
+      "We build content roadmaps aligned with business goals, develop engaging visuals and platform-specific content, strengthen community through engagement and conversations, and amplify high-performing content to drive measurable growth.",
     deliverables: [
-      'Platform strategy & content pillars',
-      'Monthly content calendar & production',
-      'Community management',
-      'Paid social integration',
-      'Analytics & growth reporting',
+      'Instagram, Facebook, LinkedIn & YouTube Marketing',
+      'Reels & Shorts Strategy',
+      'Community Management',
+      'Content Calendar Planning',
+      'Influencer Collaborations',
+      'AI-Powered Content Workflows',
     ],
-    image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?w=900&q=80&auto=format&fit=crop',
+    framework: 'Research → Create → Engage → Amplify → Grow',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'Fashion Brand', outcome: '180% follower growth in 90 days', tag: 'Fashion' },
-      { title: 'B2B Software Co.', outcome: '3× LinkedIn engagement rate vs. industry avg', tag: 'Tech' },
+      { title: 'D2C Fashion', outcome: '180% follower growth in 90 days', tag: 'Fashion' },
+      { title: 'B2B Software Co.', outcome: '3× LinkedIn engagement vs. industry avg', tag: 'Tech' },
     ],
   },
   {
     id: 'performance',
     slug: 'Performance',
-    icon: '📈',
-    color: '#a87242',
-    tagline: 'Every dollar, accountable.',
-    headline: 'Performance Marketing',
-    what: 'Performance marketing is paid advertising built entirely around measurable outcomes — clicks, leads, and revenue — not impressions or reach.',
-    why: "Organic growth is powerful but slow. Performance marketing injects velocity, letting you scale proven messages to new audiences and pull forward revenue you'd otherwise wait months for.",
+    icon: '07',
+    color: '#d4a576',
+    tagline: 'Ad spend → business growth.',
+    headline: 'Performance Marketing That Turns Ad Spend Into Business Growth',
+    what: "Running ads is easy. Generating profitable results consistently is not. We help businesses attract the right audience, generate qualified leads, and maximize return on ad spend through data-driven campaigns across Meta, Google, LinkedIn, YouTube, and emerging advertising platforms.",
+    why: "Customer journeys are no longer linear. A prospect may discover your brand through Instagram, search on Google, watch a YouTube video, and convert days later after seeing remarketing ads. Successful advertising today requires the right combination of targeting, creative strategy, automation, and conversion optimization.",
     approach:
-      'We audit existing accounts, restructure campaign architecture for efficiency, and build creative testing pipelines. As winners emerge we scale budgets predictably — always optimising for cost-per-acquisition, not cost-per-click.',
+      "We identify and target high-intent audiences, build and manage campaigns designed for measurable outcomes, improve landing pages and user journeys to maximize results, and continuously optimize campaigns for better performance and scalable growth.",
     deliverables: [
-      'Account audit & restructure',
-      'Creative strategy & ad production',
-      'A/B testing framework',
-      'Conversion rate optimisation',
-      'Bi-weekly performance reports',
+      'Meta, Google, YouTube & LinkedIn Ads',
+      'Lead Generation Campaigns',
+      'Ecommerce Advertising',
+      'Remarketing Campaigns',
+      'Conversion Rate & Landing Page Optimization',
+      'B2B SaaS Lead Generation',
     ],
+    framework: 'Research → Launch → Optimize → Scale → Grow',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
       { title: 'D2C Health Brand', outcome: '2.8× ROAS improvement after audit', tag: 'Health' },
@@ -102,112 +188,42 @@ const services = [
     ],
   },
   {
-    id: 'branding',
-    slug: 'Branding',
-    icon: '✨',
+    id: 'ecommerce',
+    slug: 'Ecommerce',
+    icon: '08',
     color: '#8b5e3c',
-    tagline: 'Identity that commands attention.',
-    headline: 'Branding & Identity',
-    what: 'Branding is the strategic and visual language that tells the world who you are, what you stand for, and why you are different from every alternative.',
-    why: 'In a noisy market, the brand that is most memorable and most trusted wins — regardless of price. Strong branding is the compound interest of marketing.',
+    tagline: 'Built to sell, not just look good.',
+    headline: 'Ecommerce Solutions Built To Sell, Not Just Look Good',
+    what: "Having a store online isn't enough anymore. Brands need stores that convert, ads that pay for themselves, and customers who keep coming back instead of buying once and disappearing. We combine store optimization, performance advertising, and retention marketing to help ecommerce brands grow profitably.",
+    why: "Customers don't just visit your store and buy anymore. They compare prices across marketplaces, check reviews, abandon carts, and need a reason to come back before they actually convert. Winning in ecommerce today means treating your store as one connected system, not just a website waiting for traffic.",
     approach:
-      'We go deep on brand positioning before we touch a pixel: audience research, competitive landscape, messaging architecture. Then we translate strategy into a distinctive visual identity system that scales from social thumbnails to billboard.',
+      "We fix what's costing you sales — from slow load times to confusing checkout flows. We run campaigns built to bring in buyers, not just clicks. We improve product pages and checkout to get more revenue from existing traffic. And we turn one-time buyers into repeat customers through email, WhatsApp, and remarketing.",
     deliverables: [
-      'Brand positioning & messaging framework',
-      'Logo & visual identity system',
-      'Brand guidelines document',
-      'Typography & colour palette',
-      'Brand voice & tone guide',
+      'Shopify / WooCommerce Store Setup',
+      'Product Page & Checkout Optimization',
+      'Ecommerce Advertising (Meta, Google Shopping, YouTube)',
+      'Marketplace Management (Amazon, Flipkart)',
+      'Email & WhatsApp Retention Campaigns',
+      'Remarketing & Abandoned Cart Recovery',
     ],
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80&auto=format&fit=crop',
+    framework: 'Audit → Build → Launch → Optimize → Retain',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop',
     relatedWork: [
-      { title: 'FinTech Startup', outcome: 'Full rebrand ahead of Series A raise', tag: 'Finance' },
-      { title: 'Hospitality Group', outcome: 'New identity across 12 locations', tag: 'Hospitality' },
-    ],
-  },
-  {
-    id: 'web',
-    slug: 'Websites',
-    icon: '🌐',
-    color: '#a87242',
-    tagline: 'Your hardest-working sales asset.',
-    headline: 'Website Development',
-    what: 'We build high-performance websites that are engineered — not just designed — to convert visitors into customers and rank on search engines.',
-    why: 'Your website is the only digital asset you fully own. It should be doing the heavy lifting: generating leads, building trust, and working 24/7.',
-    approach:
-      'Every project starts with conversion goals and user journeys. We design with those outcomes in mind, build on modern stacks for performance, and optimise every page for SEO and Core Web Vitals from day one.',
-    deliverables: [
-      'UX/UI design & prototyping',
-      'Front-end & CMS development',
-      'Performance & Core Web Vitals optimisation',
-      'On-page SEO implementation',
-      'Post-launch support & maintenance',
-    ],
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=900&q=80&auto=format&fit=crop',
-    relatedWork: [
-      { title: 'Real Estate Platform', outcome: 'Site rebuilt — 210% more qualified leads', tag: 'Real Estate' },
-      { title: 'Agency Rebrand', outcome: '99 Lighthouse score, 0.8s LCP', tag: 'Agency' },
-    ],
-  },
-  {
-    id: 'content',
-    slug: 'Content',
-    icon: '✍️',
-    color: '#c89368',
-    tagline: 'Attract. Educate. Convert.',
-    headline: 'Content Creation',
-    what: 'Content creation is the engine behind every other service — the articles, videos, copy, and visuals that attract your audience, build trust, and drive decisions.',
-    why: 'Brands that consistently produce valuable content earn 6× more leads than brands that rely on advertising alone. Content compounds; ads stop the moment you stop paying.',
-    approach:
-      'We build content ecosystems around topics your customers are already searching for. Every piece is strategically mapped to a stage in the buyer journey and optimised to rank, share, and convert.',
-    deliverables: [
-      'Content strategy & pillar mapping',
-      'Blog articles & thought leadership',
-      'Video scripts & production direction',
-      'Social content & copywriting',
-      'Content performance analysis',
-    ],
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&q=80&auto=format&fit=crop',
-    relatedWork: [
-      { title: 'B2B SaaS Company', outcome: 'Content drives 40% of all inbound leads', tag: 'Tech' },
-      { title: 'E-commerce Brand', outcome: 'Blog traffic up 250% in 8 months', tag: 'Retail' },
-    ],
-  },
-  {
-    id: 'graphic',
-    slug: 'Design',
-    icon: '🎨',
-    color: '#d4a576',
-    tagline: 'Visual language that sells.',
-    headline: 'Graphic Design',
-    what: 'Graphic design is how your brand communicates without words — the visual shorthand that signals quality, trust, and professionalism before a single word is read.',
-    why: 'People form visual judgements in milliseconds. Premium design is not a luxury — it is a conversion tool that affects every touchpoint from ad creative to pitch deck.',
-    approach:
-      'We approach every design brief as a communication problem first. Concept, hierarchy, and clarity come before aesthetics. Then we execute to the highest production standard, across digital and print.',
-    deliverables: [
-      'Ad creative & campaign visuals',
-      'Pitch decks & presentation design',
-      'Social media graphics & templates',
-      'Print collateral & packaging',
-      'Infographics & data visualisation',
-    ],
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80&auto=format&fit=crop',
-    relatedWork: [
-      { title: 'Consumer App', outcome: 'App Store feature — 3× download spike', tag: 'Tech' },
-      { title: 'Food & Beverage Brand', outcome: 'Packaging redesign increased shelf pickup by 38%', tag: 'FMCG' },
+      { title: 'Fashion D2C', outcome: '40% lift in conversion rate after optimization', tag: 'Retail' },
+      { title: 'Beauty Brand', outcome: 'Repeat purchase rate up from 18% to 34%', tag: 'FMCG' },
     ],
   },
 ]
 
 const ecosystemConnections: Record<string, string[]> = {
-  seo:         ['content', 'web', 'performance'],
-  geo:         ['performance', 'social', 'seo'],
-  social:      ['content', 'branding', 'performance'],
-  performance: ['seo', 'geo', 'web', 'content'],
-  branding:    ['web', 'content', 'graphic', 'social'],
-  web:         ['seo', 'branding', 'performance'],
-  content:     ['seo', 'social', 'branding'],
-  graphic:     ['branding', 'content', 'social'],
+  seo:         ['content', 'ai', 'performance'],
+  content:     ['seo', 'social', 'ai', 'branding'],
+  influencer:  ['social', 'content', 'performance'],
+  branding:    ['content', 'social', 'ai'],
+  ai:          ['content', 'social', 'performance', 'ecommerce'],
+  social:      ['content', 'influencer', 'performance', 'branding'],
+  performance: ['seo', 'ai', 'social', 'ecommerce'],
+  ecommerce:   ['performance', 'ai', 'seo'],
 }
 
 const processSteps = [
@@ -381,6 +397,17 @@ function ServiceDeepDive({ svc, index }: { svc: typeof services[0]; index: numbe
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Framework */}
+        <div className="mt-8 pt-6 border-t border-[#a87242]/15">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-3">Our framework</p>
+          <p
+            className="text-sm sm:text-base font-semibold leading-relaxed"
+            style={{ color: svc.color }}
+          >
+            {svc.framework}
+          </p>
         </div>
       </div>
 
@@ -589,7 +616,7 @@ export default function ServicesPage({ onBookCall, onViewWork }: ServicesPagePro
             <p className="text-xs sm:text-sm font-semibold text-[#c89368] uppercase tracking-widest mb-4">The Ecosystem</p>
             <div className="md:flex items-end justify-between gap-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.1] mb-4 md:mb-0">
-                Eight forces,{' '}
+                Eight services,{' '}
                 <span className="font-serif-italic font-normal text-[#d4a576]">one</span>{' '}
                 unified system
               </h2>
