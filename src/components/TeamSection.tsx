@@ -124,9 +124,9 @@ const team: TeamMember[] = [
     bio: "Specializes in SEO strategies that improve rankings, organic traffic, and online visibility. Delivers sustainable growth through technical SEO and content optimization.",
   },
   {
-    name: 'Aastha',
+    name: 'Aastha Kapoor',
     role: 'Social Media & Content Strategist',
-    photo: null,
+    photo: '/team_photos/Aastha%20Kapoor.jpeg',
     color: '#c89368',
     skills: ['Strategy', 'Content', 'SEO'],
     bio: "Develops content strategies aligned with business goals and audience needs. Combines strategic planning with SEO best practices to drive visibility and growth.",
@@ -184,7 +184,7 @@ const team: TeamMember[] = [
   {
     name: 'Abhay Bhardwaj',
     role: 'Video Producer',
-    photo: null,
+    photo: '/team_photos/Abhay%20Bhardwaj.webp',
     color: '#a87242',
     skills: ['Video', 'Direction', 'Production'],
     bio: "Experienced in bringing concepts to life through creative planning, production, and execution. Produces engaging visual content that connects with audiences and delivers results.",
