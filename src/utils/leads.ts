@@ -37,6 +37,9 @@ const TABLE = 'leads'
  * Insert a single lead from the public contact form.
  *
  * Auth: anon key. RLS allows anonymous INSERTs but blocks SELECT/UPDATE/DELETE.
+ * `.select('id')` is added so PostgREST returns the inserted row — if RLS
+ * silently inserts 0 rows we surface that as an error rather than pretending
+ * to succeed.
  */
 export async function submitLead(input: Omit<LeadInsert, 'user_agent'>): Promise<LeadResult> {
   const payload: LeadInsert = {
@@ -48,16 +51,40 @@ export async function submitLead(input: Omit<LeadInsert, 'user_agent'>): Promise
     user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
   }
 
-  const { error } = await supabase.from(TABLE).insert(payload)
+  const { data, error } = await supabase.from(TABLE).insert(payload).select('id')
 
   if (error) {
     console.error('[submitLead] Supabase insert failed:', error)
+    // Surface specific cases so the user / dev can act on them.
+    if (error.code === '23505') {
+      return { ok: false, error: 'Looks like you already submitted this. We will be in touch.' }
+    }
+    if (error.code === '42P01' || /relation .* does not exist/i.test(error.message)) {
+      return {
+        ok: false,
+        error:
+          'The leads table is missing. Run supabase/leads-setup.sql on the connected project.',
+      }
+    }
+    if (/row-level security|RLS/i.test(error.message)) {
+      return {
+        ok: false,
+        error:
+          'Submission blocked by database policy. Re-run supabase/leads-setup.sql on the connected project.',
+      }
+    }
+    return {
+      ok: false,
+      error: 'Could not send your message. Please try again in a moment.',
+    }
+  }
+
+  if (!data || data.length === 0) {
+    console.error('[submitLead] 0 rows inserted — RLS policy likely missing on this Supabase project')
     return {
       ok: false,
       error:
-        error.code === '23505'
-          ? 'Looks like you already submitted this. We will be in touch.'
-          : 'Could not send your message. Please try again in a moment.',
+        'Submission did not save. The connected Supabase project is missing the leads policies — run supabase/leads-setup.sql there.',
     }
   }
 
