@@ -110,11 +110,30 @@ export async function updateLead(id: string, patch: Partial<Pick<Lead, 'name' | 
 }
 
 export async function deleteLead(id: string): Promise<LeadResult> {
-  const { error } = await supabase.from(TABLE).delete().eq('id', id)
+  // Use select() so PostgREST returns the deleted row(s).
+  // If RLS blocks the delete, Supabase returns 0 rows without an error —
+  // we treat that as a failure so the UI surfaces it rather than silently
+  // showing the row still in the list.
+  const { data, error } = await supabase
+    .from(TABLE)
+    .delete()
+    .eq('id', id)
+    .select('id')
+
   if (error) {
     console.error('[deleteLead] failed:', error)
     return { ok: false, error: error.message }
   }
+
+  if (!data || data.length === 0) {
+    console.error('[deleteLead] 0 rows deleted — RLS policy may be missing or session expired')
+    return {
+      ok: false,
+      error:
+        'Delete was blocked. Make sure the database policies are up to date (run supabase/leads-setup.sql on the new project).',
+    }
+  }
+
   return { ok: true }
 }
 
